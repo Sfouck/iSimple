@@ -1,5 +1,11 @@
 <template>
-  <transition name="modal">
+  <transition
+    name="modal"
+    appear
+    appear-class="modal-enter"
+    appear-active-class="modal-enter-active"
+    appear-to-class="modal-enter-to"
+  >
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
@@ -32,6 +38,64 @@
 <script>
 export default {
   name: 'IModal',
+  // methods: {
+  //   // --------
+  //   // 进入中
+  //   // --------
+
+  //   beforeEnter: function(el) {
+  //     console.log('beforeEnter')
+  //     console.log(el)
+  //     // ...
+  //   },
+  //   // 当与 CSS 结合使用时
+  //   // 回调函数 done 是可选的
+  //   enter: function(el, done) {
+  //     console.log('enter')
+  //     console.log(el)
+  //     // ...
+  //     done()
+  //   },
+  //   afterEnter: function(el) {
+  //     console.log('afterEnter')
+  //     console.log(el)
+  //     // ...
+  //   },
+  //   enterCancelled: function(el) {
+  //     console.log('enterCancelled')
+  //     console.log(el)
+  //     // ...
+  //   },
+
+  //   // --------
+  //   // 离开时
+  //   // --------
+
+  //   beforeLeave: function(el) {
+  //     console.log('beforeLeave')
+  //     console.log(el)
+  //     // ...
+  //   },
+  //   // 当与 CSS 结合使用时
+  //   // 回调函数 done 是可选的
+  //   leave: function(el, done) {
+  //     console.log('leave')
+  //     console.log(el)
+  //     // ...
+  //     done()
+  //   },
+  //   afterLeave: function(el) {
+  //     console.log('afterLeave')
+  //     console.log(el)
+  //     // ...
+  //   },
+  //   // leaveCancelled 只用于 v-show 中
+  //   leaveCancelled: function(el) {
+  //     console.log('leaveCancelled')
+  //     console.log(el)
+  //     // ...
+  //   },
+  // },
 }
 </script>
 
@@ -45,7 +109,7 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
-  transition: opacity 0.3s ease;
+  // transition: opacity 0.3s ease;
 }
 
 .modal-wrapper {
@@ -86,17 +150,31 @@ export default {
  * these styles.
  */
 
-.modal-enter {
+.modal-enter,
+.modal-leave-to {
   opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.modal-enter-to,
+.modal-leave {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  // transition-delay: 1s;
+  transition: all 0.3s ease;
+  // opacity: 0;
+}
+
+// .modal-enter-active .modal-container,
+// .modal-leave-active .modal-container {
+//   // -webkit-transform: scale(1.1);
+//   // transform: scale(1.1);
+//   // transition: all 0.3s ease;
+// }
 </style>

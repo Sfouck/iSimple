@@ -9,13 +9,12 @@
     </header>
     <main>
       <router-view>
-        <i-breadcrumb slot="crumb"></i-breadcrumb>
+        <!-- <i-breadcrumb slot="crumb"></i-breadcrumb> -->
       </router-view>
     </main>
     <aside class="btn-gotop btn-gotop--fixed">
       <a class="btn-gotop__link" href="#header_logo"></a>
     </aside>
-    <!-- <app-menu></app-menu> -->
     <footer>
       <p>
         國立虎尾科技大學 地方創生計畫 wjc &copy; 2019
