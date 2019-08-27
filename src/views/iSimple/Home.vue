@@ -104,13 +104,13 @@ export default {
 <style lang="scss" scoped>
 .main__subscription {
   display: flex;
-  height: 30vh;
-  max-height: 300px;
+  // height: 30vh;
+  // min-height: 250px;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   // line-height: 1.5;
-  padding: 0 5rem;
+  padding: 2.5rem 0rem;
   background-color: antiquewhite;
   > * {
     margin: 0.5rem 0;

@@ -7,13 +7,13 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'root',
+    //   redirect: '/isimple',
+    // },
     {
       path: '/',
-      name: 'root',
-      redirect: '/isimple',
-    },
-    {
-      path: '/isimple',
       component: () =>
         import(/* webpackChunkName: "isimple" */ './views/iSimple.vue'),
       children: [

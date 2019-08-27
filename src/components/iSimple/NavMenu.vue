@@ -31,12 +31,12 @@ export default {
 <style lang="scss" scoped>
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // justify-content: space-between;
+  // align-items: center;
   height: 10vh;
   min-height: 100px;
   .logo-box {
-    background: lightskyblue;
+    // background: lightskyblue;
     flex: initial;
     height: 100%;
     > img {
@@ -50,11 +50,13 @@ nav {
   .nav__menu {
     display: flex;
     flex: auto;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+    padding: 0 5vw;
     // width: 60%;
     height: 100%;
-    background: rgb(165, 255, 213);
+    // background: rgb(165, 255, 213);
     > li {
       list-style: none;
       > a {

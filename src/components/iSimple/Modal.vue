@@ -104,11 +104,13 @@ export default {
   position: fixed;
   z-index: 9998;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
+
+  transform-origin: 100% 0;
   // transition: opacity 0.3s ease;
 }
 
@@ -153,15 +155,16 @@ export default {
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  // -webkit-transform: scale(1.1);
+  // transform: scale(1.1);
+  transform: scaleY(0);
 }
 
 .modal-enter-to,
 .modal-leave {
   opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  // -webkit-transform: scaleY(1);
+  transform: scaleY(1);
 }
 
 .modal-enter-active,

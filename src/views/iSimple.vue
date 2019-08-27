@@ -72,7 +72,7 @@ img {
   > header {
     box-shadow: $shadow-default;
     // padding: 0 2rem;
-    padding: 0 5vw;
+    padding: 0 10vw;
     .btn-menu {
       display: none;
     }
@@ -85,29 +85,11 @@ img {
 
 section {
   .box {
-    background: $color-primary;
+    background: $color-light;
     border: $color-dark solid 2px;
     padding: 2rem;
     text-align: center;
     box-shadow: $shadow-default;
-  }
-}
-
-.main__subscription {
-  display: flex;
-  height: 30vh;
-  max-height: 300px;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  // line-height: 1.5;
-  padding: 0 5rem;
-  background-color: antiquewhite;
-  > * {
-    margin: 0.5rem 0;
-  }
-  > form > * {
-    display: inline-block;
   }
 }
 
