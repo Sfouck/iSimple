@@ -51,7 +51,7 @@ export default {
 .cover {
   overflow: hidden;
   &__showcase {
-    min-height: 400px;
+    min-height: 500px;
     line-height: 1.5;
     padding: 3rem;
     z-index: 0;
@@ -61,8 +61,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: $shadow-default;
 
+    box-shadow: $shadow-default;
     color: $color-light;
 
     &::before {
@@ -74,7 +74,9 @@ export default {
 
       display: block;
       // background-image: url('/img/blogging-coding-copywriting-34140.jpg');
-      background-image: var(--background-url);
+      /* top, transparent black, faked with gradient */
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        var(--background-url);
       background-size: cover;
       background-position: center;
       width: 100%;
@@ -84,7 +86,7 @@ export default {
       // -moz-filter: blur(5px);
       // -o-filter: blur(5px);
       // -ms-filter: blur(5px);
-      filter: blur(2px);
+      // filter: blur(1px);
     }
     > div {
       padding: 0.5rem;
