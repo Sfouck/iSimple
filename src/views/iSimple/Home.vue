@@ -1,6 +1,6 @@
 <template>
   <section class="page__home">
-    <i-cover>
+    <i-cover :background_url="cover_background">
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
@@ -12,7 +12,7 @@
         著他們所經歷的過程,提升我們的想法與見解。
       </p>
       <template #button>
-        <a href="#" class="btn" @click="showModal = true">
+        <a class="btn" @click="showModal = true">
           Read More(Open Modal)
         </a>
       </template>
@@ -52,7 +52,23 @@
       </form>
     </section>
 
-    <i-modal v-if="showModal" @close="showModal = false"></i-modal>
+    <i-modal v-if="showModal" @close="showModal = false">
+      <template #header> </template>
+      <template #body>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/hgVtUkRf_Cc"
+            frameborder="0"
+            allowfullscreen="1"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            width="640"
+            height="360"
+            style="width:100%; height:100%; position: absolute;"
+          ></iframe>
+        </div>
+      </template>
+      <template #footer> </template>
+    </i-modal>
   </section>
 </template>
 
@@ -61,6 +77,7 @@ export default {
   // name: 'isimple-home',
   data() {
     return {
+      cover_background: '/img/blogging-coding-copywriting-34140.jpg',
       showModal: false,
       infos: [
         {
@@ -102,6 +119,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; //16:9
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .main__subscription {
   display: flex;
   // height: 30vh;

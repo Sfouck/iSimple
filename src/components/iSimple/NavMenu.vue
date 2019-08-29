@@ -64,6 +64,11 @@ nav {
         text-decoration: none;
         font-weight: bold;
         font-size: 1.2rem;
+        transition: 0.6s;
+        &:hover {
+          color: $color-light;
+          background: $color-dark;
+        }
       }
     }
     .nav__option {

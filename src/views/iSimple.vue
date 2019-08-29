@@ -8,9 +8,13 @@
       </div>
     </header>
     <main>
-      <router-view>
-        <!-- <i-breadcrumb slot="crumb"></i-breadcrumb> -->
-      </router-view>
+      <transition name="fade" mode="out-in">
+        <!-- <keep-alive><router-view> </router-view></keep-alive> -->
+        <router-view> </router-view>
+      </transition>
+      <!-- <router-view>
+        <i-breadcrumb slot="crumb"></i-breadcrumb>
+      </router-view> -->
     </main>
     <aside class="btn-gotop btn-gotop--fixed">
       <a class="btn-gotop__link" href="#header_logo"></a>
@@ -30,10 +34,10 @@ export default {
   data() {
     return {
       nav_links: [
-        { title: 'Home', route: { name: 'home', path: '/' } },
-        { title: 'About', route: { name: 'about', path: '/about' } },
-        { title: 'Works', route: { name: 'works', path: '/works' } },
-        { title: 'Projects', route: { name: 'projects', path: '/projects' } },
+        { title: '首頁', route: { name: 'home', path: '/' } },
+        { title: '店家資訊', route: { name: 'about', path: '/about' } },
+        { title: '電商產品', route: { name: 'works', path: '/works' } },
+        { title: '影片區', route: { name: 'projects', path: '/projects' } },
       ],
     }
   },
@@ -62,6 +66,13 @@ img {
   padding: 0.6rem 1.3rem;
   text-decoration: none;
   border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.6s;
+  &:hover {
+    background: $color-light;
+    color: $color-dark;
+  }
 }
 
 .wrapper {
@@ -81,6 +92,18 @@ img {
     display: grid;
     // grid-gap: 20px;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 
 section {

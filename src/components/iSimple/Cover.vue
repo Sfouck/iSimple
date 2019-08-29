@@ -1,18 +1,24 @@
 <template>
   <section class="cover">
-    <div class="box showcase">
-      <slot name="title">
-        <h1>cover</h1>
-      </slot>
-      <slot>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi eaque
-          inventore odit esse quibusdam vitae iure nostrum rerum illum!
-        </p>
-      </slot>
-      <slot name="button">
-        <a href="#" class="btn">Read More</a>
-      </slot>
+    <div class="cover__showcase" :style="cssVars">
+      <div class="cover__title">
+        <slot name="title">
+          <!-- <h1>cover</h1> -->
+        </slot>
+      </div>
+      <div class="cover__body">
+        <slot>
+          <!-- <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi eaque
+            inventore odit esse quibusdam vitae iure nostrum rerum illum!
+          </!-->
+        </slot>
+      </div>
+      <div class="cover__footer">
+        <slot name="button">
+          <!-- <a href="#" class="btn">Read More</a> -->
+        </slot>
+      </div>
     </div>
   </section>
 </template>
@@ -20,33 +26,78 @@
 <script>
 export default {
   name: 'ICover',
+  props: {
+    background_url: {
+      type: String,
+      default: '/img/blogging-coding-copywriting-34140.jpg',
+    },
+  },
+  // mounted() {
+  //   // TODO: change css setting method from v-bind to js function
+  //   const cover__showcase = this.$el.getElementsByClassName('cover__showcase')[0];
+  //   console.log(cover__showcase.get)
+  // },
+  computed: {
+    cssVars() {
+      return {
+        '--background-url': `url(${this.background_url})`,
+      }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .cover {
-  .showcase {
+  overflow: hidden;
+  &__showcase {
     min-height: 400px;
     line-height: 1.5;
-    background: url('../../assets/blogging-coding-copywriting-34140.jpg');
-    background-size: cover;
-    background-position: center;
     padding: 3rem;
+    z-index: 0;
+
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: $shadow-default;
-    h1 {
+
+    color: $color-light;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+
+      display: block;
+      // background-image: url('/img/blogging-coding-copywriting-34140.jpg');
+      background-image: var(--background-url);
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+
+      // -webkit-filter: blur(5px);
+      // -moz-filter: blur(5px);
+      // -o-filter: blur(5px);
+      // -ms-filter: blur(5px);
+      filter: blur(2px);
+    }
+    > div {
+      padding: 0.5rem;
+      text-align: center;
+    }
+    .cover__title {
       font-size: 4rem;
       margin-bottom: 0;
-      color: $color-light;
     }
 
-    p {
+    .cover__body {
       font-size: 1.3rem;
       margin-top: 0;
-      color: $color-light;
     }
   }
 }

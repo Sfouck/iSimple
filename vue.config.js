@@ -1,3 +1,6 @@
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+//   .BundleAnalyzerPlugin
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -6,4 +9,7 @@ module.exports = {
       },
     },
   },
+  // configureWebpack: {
+  //   plugins: [new BundleAnalyzerPlugin()],
+  // },
 }
