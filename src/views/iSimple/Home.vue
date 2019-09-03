@@ -152,15 +152,15 @@ export default {
 
 .main__info {
   // background: $color-light;
-  background: pink;
+  // background: pink;
   padding: 1.5rem;
   > hgroup {
-    background: lightcyan;
+    // background: lightcyan;
     text-align: center;
     padding: 1.5rem 0;
   }
   > section {
-    background: lightgreen;
+    //   background: lightgreen;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

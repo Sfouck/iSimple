@@ -1,64 +1,67 @@
 <template>
   <div class="card">
     <div class="card__thumb">
-      <!-- <img :src="video.thumbnail" alt="" /> -->
-      <slot name="thumbnail"></slot>
+      <slot name="thumbnail">
+        <img :src="img" alt="card_thumb" />
+      </slot>
     </div>
+
     <div class="card__content">
       <div class="text-area">
         <div class="text-area__title">
-          <slot name="title"></slot>
+          <slot name="title">
+            <h4>{{ title }}</h4>
+          </slot>
         </div>
         <div class="text-area__description">
-          <slot name="description"></slot>
+          <slot name="description">
+            <h5>{{ description }}</h5>
+          </slot>
         </div>
       </div>
       <div class="tag-area">
-        <slot name="tag"></slot>
+        <a href="" v-for="(tag, index) in tags" :key="index"> #{{ tag }} </a>
       </div>
     </div>
 
-    <div class="card__link-box">
-      <!-- <div class="link__box"> -->
-      <slot name="link"></slot>
-      <!-- </div> -->
+    <div class="card__link-box" v-if="link">
+      <a :href="link">
+        <p>深入瞭解</p>
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'ICard',
+  props: ['img', 'title', 'description', 'tags', 'link'],
+}
 </script>
 
 <style lang="scss" scoped>
 .card {
-  // border: burlywood solid 2px;
-  min-width: 25%;
+  min-width: 200px;
   position: relative;
 
   &__thumb {
     width: 100%;
-    // border-width: 1px 1px 0 1px;
-    // border-style: solid;
-    // border-color: gray;
-    // border: darkgreen solid 2px;
   }
 
   &__content {
     padding: 1rem;
-    // border: darkblue solid 2px;
     border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: lightgray;
     overflow: hidden;
     .text-area {
-      h4,
-      h5 {
+      &__title,
+      &__description {
         margin-bottom: 8px;
-        line-height: 1.3rem;
+        line-height: 1.2rem;
         letter-spacing: 2px;
       }
-      h4 {
+      &__title {
         color: darken(red, 10);
         text-overflow: ellipsis;
         font-size: 1.2rem;

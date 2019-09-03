@@ -9,30 +9,11 @@
     </i-cover>
     <section class="about about__shop-list">
       <i-card
-        class="shop__card"
+        class="shop-card"
         v-for="(shop, index) in shop_list"
+        v-bind="shop"
         :key="index"
       >
-        <template #thumbnail>
-          <img :src="shop.img" alt="" />
-        </template>
-        <template #title>
-          <h4>{{ shop.title }}</h4>
-        </template>
-        <template #description>
-          <h5>{{ shop.description }}</h5>
-        </template>
-        <template #tag>
-          <!-- {{ shop.tags }} -->
-          <a href="" v-for="(tag, index) in shop.tags" :key="index">
-            #{{ tag }}
-          </a>
-        </template>
-        <template #link>
-          <a :href="shop.link">
-            <p>深入瞭解</p>
-          </a>
-        </template>
       </i-card>
     </section>
   </section>

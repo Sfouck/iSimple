@@ -76,7 +76,7 @@ img {
 }
 
 .wrapper {
-  background: $color-light;
+  // background: $color-light;
   // width: 100%;
   // display: grid;
   // grid-gap: 20px;

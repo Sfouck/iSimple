@@ -13,11 +13,6 @@
           每一件獨特作品都隱含著「適材適所」的哲思。
         </p>
       </section>
-      <template #button>
-        <!-- <a class="btn" @click="showModal = true">
-          Read More(Open Modal)
-        </a> -->
-      </template>
     </i-cover>
 
     <section
@@ -34,8 +29,8 @@
             <span class="right"></span>
           </a>
           <h2>
-            {{ video.vid }}
-            <small>{{ video.id }}</small>
+            {{ video.vtitle }}
+            <small>{{ video.vid }}</small>
           </h2>
         </div>
       </div>
@@ -74,12 +69,18 @@ export default {
       },
       cover_image: '/cover-video.jpg',
       video_list: [
-        { vid: 'r3fE6FQT82s' },
-        { vid: 'NmrYaeCs5Zc' },
-        { vid: 'Ff5Bu0Gi2b4' },
-        { vid: 'Fz5s1ZSZusY' },
-        { vid: '1Ezccc5O5Pc' },
-        { vid: 'LhdkD6CY9HE' },
+        { vid: '1DXUWTUX4gU', vtitle: '水林小陳' },
+        { vid: 'eMrPsnlhLtk', vtitle: '五木工坊' },
+        {
+          vid: 'Ff5Bu0Gi2b4',
+          vtitle: 'Hong Kong Island Drone Tour',
+        },
+        { vid: 'Fz5s1ZSZusY', vtitle: 'City of Singapore - 2018' },
+        { vid: '1Ezccc5O5Pc', vtitle: 'Top 5 Dubai Mega Projects' },
+        {
+          vid: 'LhdkD6CY9HE',
+          vtitle: 'Hotel Dubai Hotel Atlantis The Palm Dubai booking',
+        },
       ],
       current_video: '',
     }
