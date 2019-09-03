@@ -1,6 +1,6 @@
 <template>
   <section class="page__home">
-    <i-cover :background_url="cover_background">
+    <i-cover :background-url="cover_background">
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
@@ -77,7 +77,7 @@ export default {
   // name: 'isimple-home',
   data() {
     return {
-      cover_background: '/img/blogging-coding-copywriting-34140.jpg',
+      cover_background: '/cover-home.jpg',
       showModal: false,
       infos: [
         {

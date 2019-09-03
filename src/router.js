@@ -24,6 +24,12 @@ export default new Router({
             import(/* webpackChunkName: "isimple-home" */ './views/iSimple/Home.vue'),
         },
         {
+          path: 'epaper',
+          name: 'e-paper',
+          component: () =>
+            import(/* webpackChunkName: "isimple-home" */ './views/iSimple/Epaper.vue'),
+        },
+        {
           path: 'about',
           name: 'about',
           component: () =>

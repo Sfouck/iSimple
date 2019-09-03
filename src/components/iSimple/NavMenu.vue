@@ -1,18 +1,20 @@
 <template>
   <nav>
     <div class="logo-box">
-      <img
-        src="/img/logo.png"
-        alt="Logo"
-        class="logo-box__content"
-        id="header__logo"
-      />
+      <router-link :to="routeToHome">
+        <img
+          src="/img/logo.png"
+          alt="Logo"
+          class="logo-box__content"
+          id="header__logo"
+        />
+      </router-link>
     </div>
     <ul class="nav__menu">
       <div class="nav__option">
         nav__option
       </div>
-      <li v-for="(item, index) in links" :key="index">
+      <li class="nav__menu-item" v-for="(item, index) in links" :key="index">
         <router-link :to="item.route">
           {{ item.title }}
         </router-link>
@@ -25,6 +27,11 @@
 export default {
   name: 'NavMenu',
   props: ['links'],
+  data() {
+    return {
+      routeToHome: { name: 'home', path: '/' },
+    }
+  },
 }
 </script>
 
@@ -39,7 +46,7 @@ nav {
     // background: lightskyblue;
     flex: initial;
     height: 100%;
-    > img {
+    img {
       height: 100%;
       min-height: 100px;
       margin: 0 auto;
@@ -63,7 +70,7 @@ nav {
         color: $color-dark;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         transition: 0.6s;
         &:hover {
           color: $color-light;

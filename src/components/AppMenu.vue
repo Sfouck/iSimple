@@ -54,7 +54,7 @@ $menu--speed: 0.75s;
   position: fixed;
   top: 50%;
   left: 0;
-  z-index: 1;
+  z-index: 9997;
   .toggler {
     position: absolute;
     top: 0;

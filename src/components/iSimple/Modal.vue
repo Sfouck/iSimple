@@ -22,9 +22,11 @@
           <div class="modal-footer">
             <slot name="footer"></slot>
           </div>
+
+          <a class="modal-btn-close" @click="$emit('close')"></a>
         </div>
         <!-- <div class="modal-btn-container"> -->
-        <a class="modal-btn-close" @click="$emit('close')"></a>
+        <!-- <a class="modal-btn-close" @click="$emit('close')"></a> -->
         <!-- </div> -->
       </div>
     </div>
@@ -59,7 +61,8 @@ export default {
   // vertical-align: middle;
   // position: relative;
   // position: absolute;
-  transform: translate(0, 50%);
+  // transform: translate(0, 50%);
+  height: 100%;
   // top: 50%;
   // left: 50%;
   display: flex;
@@ -75,8 +78,9 @@ export default {
   // width: 300px;
   max-width: 960px;
   width: 60%;
+  position: relative;
   // height: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   // margin: 0px auto;
   // padding: 20px 30px;
   // background-color: #fff;
@@ -99,10 +103,6 @@ export default {
   // padding-bottom: 56.25%; //16:9
   // position: relative;
   // height: 0;
-}
-
-.modal-default-button {
-  float: right;
 }
 
 /*
@@ -174,7 +174,7 @@ export default {
   // position: relative;
   position: absolute;
   top: 0;
-  left: 80%;
+  left: 100%;
   &::before,
   &::after {
     content: '';
@@ -200,12 +200,12 @@ export default {
 }
 
 @media screen and (max-width: 1023.97px) {
-  .modal-wrapper {
-    width: 100%;
-    position: absolute;
-    transform: translate(0, -50%);
-    top: 50%;
-  }
+  // .modal-wrapper {
+  //   width: 100%;
+  //   position: absolute;
+  //   transform: translate(0, -50%);
+  //   top: 50%;
+  // }
   .modal-container {
     width: 100%;
   }

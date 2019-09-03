@@ -1,6 +1,6 @@
 <template>
   <article class="app__projects">
-    <i-cover class="projects__cover" :background_url="cover_image">
+    <i-cover class="projects__cover" :background-url="cover_image">
       <template #title>
         <h1>
           木作
@@ -19,6 +19,7 @@
         </a> -->
       </template>
     </i-cover>
+
     <section
       class="projects__video-grid cards"
       :class="{ showing: cards.isShowing }"
@@ -37,19 +38,10 @@
             <small>{{ video.id }}</small>
           </h2>
         </div>
-
-        <!-- <iframe
-          :src="video.url"
-          frameborder="0"
-          allowfullscreen="1"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          width="640"
-          height="360"
-        ></iframe> -->
       </div>
     </section>
+
     <i-modal v-if="showModal" @close="showModal = false">
-      <template #header> </template>
       <template #body>
         <div class="video-wrapper">
           <iframe
@@ -63,7 +55,6 @@
           ></iframe>
         </div>
       </template>
-      <template #footer> </template>
     </i-modal>
   </article>
 </template>
@@ -81,7 +72,7 @@ export default {
         hasShow: false,
         isShowing: false,
       },
-      cover_image: '/img/cover-video.jpg',
+      cover_image: '/cover-video.jpg',
       video_list: [
         { vid: 'r3fE6FQT82s' },
         { vid: 'NmrYaeCs5Zc' },
@@ -113,9 +104,9 @@ export default {
     const cards = document.getElementsByClassName('card')
     let vm = this
     for (let card of cards) {
-      console.log(card)
+      // console.log(card)
       card.addEventListener('click', function() {
-        console.log(this)
+        // console.log(this)
         vm.cardShowing(this)
       })
     }
@@ -187,8 +178,8 @@ export default {
 .projects__video-grid {
   padding: 2rem 3rem;
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: minmax(200px, auto);
   .btn {
     $color-button: teal;
@@ -218,7 +209,7 @@ export default {
 
 // TODO: maybe css refactoring is needed
 
-.card {
+.projects__video-grid .card {
   border: burlywood solid 2px;
   background: white;
   display: inline-block;
@@ -291,7 +282,7 @@ export default {
   }
 }
 
-.cards {
+.projects__video-grid.cards {
   &.showing {
     > .card {
       cursor: pointer;
@@ -302,6 +293,13 @@ export default {
         transform: scale(0.92);
       }
     }
+  }
+}
+
+@media screen and (max-width: 767.97px) {
+  .projects__video-grid {
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 </style>

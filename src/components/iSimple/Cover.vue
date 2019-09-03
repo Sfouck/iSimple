@@ -27,9 +27,9 @@
 export default {
   name: 'ICover',
   props: {
-    background_url: {
+    'background-url': {
       type: String,
-      default: '/img/blogging-coding-copywriting-34140.jpg',
+      default: '/blogging-coding-copywriting-34140.jpg',
     },
   },
   // mounted() {
@@ -40,7 +40,7 @@ export default {
   computed: {
     cssVars() {
       return {
-        '--background-url': `url(${this.background_url})`,
+        '--background-url': `url(/img/${this.backgroundUrl})`,
       }
     },
   },

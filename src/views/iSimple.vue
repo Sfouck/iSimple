@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       nav_links: [
-        { title: '首頁', route: { name: 'home', path: '/' } },
+        { title: '電子報', route: { name: 'e-paper', path: '/epaper' } },
         { title: '店家資訊', route: { name: 'about', path: '/about' } },
         { title: '電商產品', route: { name: 'works', path: '/works' } },
         { title: '影片區', route: { name: 'projects', path: '/projects' } },
@@ -84,6 +84,7 @@ img {
     box-shadow: $shadow-default;
     // padding: 0 2rem;
     padding: 0 10vw;
+    z-index: 1000;
     .btn-menu {
       display: none;
     }

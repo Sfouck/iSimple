@@ -1,0 +1,174 @@
+<template>
+  <div class="card">
+    <div class="card__thumb">
+      <!-- <img :src="video.thumbnail" alt="" /> -->
+      <slot name="thumbnail"></slot>
+    </div>
+    <div class="card__content">
+      <div class="text-area">
+        <div class="text-area__title">
+          <slot name="title"></slot>
+        </div>
+        <div class="text-area__description">
+          <slot name="description"></slot>
+        </div>
+      </div>
+      <div class="tag-area">
+        <slot name="tag"></slot>
+      </div>
+    </div>
+
+    <div class="card__link-box">
+      <!-- <div class="link__box"> -->
+      <slot name="link"></slot>
+      <!-- </div> -->
+    </div>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss" scoped>
+.card {
+  // border: burlywood solid 2px;
+  min-width: 25%;
+  position: relative;
+
+  &__thumb {
+    width: 100%;
+    // border-width: 1px 1px 0 1px;
+    // border-style: solid;
+    // border-color: gray;
+    // border: darkgreen solid 2px;
+  }
+
+  &__content {
+    padding: 1rem;
+    // border: darkblue solid 2px;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: lightgray;
+    overflow: hidden;
+    .text-area {
+      h4,
+      h5 {
+        margin-bottom: 8px;
+        line-height: 1.3rem;
+        letter-spacing: 2px;
+      }
+      h4 {
+        color: darken(red, 10);
+        text-overflow: ellipsis;
+        font-size: 1.2rem;
+        white-space: nowrap;
+      }
+    }
+    .tag-area {
+      display: flex;
+      flex-flow: row wrap;
+      > a {
+        position: relative;
+        z-index: 0;
+        font-size: 0.8rem;
+        font-weight: bold;
+        line-height: 1.3rem;
+        overflow: hidden;
+        margin: 8px 8px 0 0;
+        padding: 0 6px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: $color-dark;
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: rgb(219, 219, 219);
+          z-index: -1;
+        }
+        &::after {
+          content: '';
+          width: 0;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: darken(red, 10);
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &__link-box {
+    $link-box_height: 42px;
+    text-align: right;
+    > a {
+      height: $link-box_height;
+      display: inline-block;
+      padding: 0 1rem;
+      border-width: 0 1px 1px;
+      border-style: solid;
+      border-color: darkred;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.4s;
+      > p {
+        display: inline-block;
+        vertical-align: middle;
+        color: $color-dark;
+        font-weight: bold;
+        line-height: $link-box_height;
+      }
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: 6px 0 6px 10px;
+        border-style: solid;
+        border-color: transparent #bf272d;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 8px;
+        transition: 0.4s;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1023.98px) {
+  .card {
+    &__content {
+      .tag-area {
+        > a:hover {
+          color: white;
+          transition: all 0s ease 0.1s;
+          &::before {
+            width: 0;
+            transition: 0.3s;
+          }
+          &::after {
+            width: 100%;
+            transition: 0.3s 0.3s;
+          }
+        }
+      }
+    }
+    &__link-box {
+      > a:hover {
+        background: #bf272d;
+        > p {
+          color: $color-light;
+        }
+        &::after {
+          border-color: transparent $color-light;
+        }
+      }
+    }
+  }
+}
+</style>
