@@ -15,69 +15,23 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  margin: 0;
-}
-
+@import './style/reset.css';
+@import './style/normalize.css';
 #app {
   // margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', '微軟正黑體', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
+  // font-size: 1rem;
+  // font-weight: 400;
+  // line-height: 1;
   width: 100%;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
+  // color: #212529;
+  // text-align: left;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #app__view {
   width: 100%;
-}
-
-/* HTML5 display-role reset for older browsers */
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 </style>

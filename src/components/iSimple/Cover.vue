@@ -93,13 +93,14 @@ export default {
       text-align: center;
     }
     .cover__title {
-      font-size: 4rem;
-      margin-bottom: 0;
+      font-size: 2rem;
+      font-weight: bold;
+      // margin-bottom: 0;
     }
 
     .cover__body {
       font-size: 1.3rem;
-      margin-top: 0;
+      // margin-top: 0;
     }
   }
 }

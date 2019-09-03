@@ -76,13 +76,8 @@ img {
 }
 
 .wrapper {
-  // background: $color-light;
-  // width: 100%;
-  // display: grid;
-  // grid-gap: 20px;
   > header {
     box-shadow: $shadow-default;
-    // padding: 0 2rem;
     padding: 0 10vw;
     z-index: 1000;
     .btn-menu {
@@ -91,7 +86,6 @@ img {
   }
   > main {
     display: grid;
-    // grid-gap: 20px;
   }
 }
 
