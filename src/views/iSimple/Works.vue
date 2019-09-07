@@ -3,7 +3,7 @@
     <i-cover :background-url="cover_image">
       <template #title>
         <h1>
-          地方創生計畫 - 電商產品
+          地方創生計畫 - 最新消息
         </h1>
       </template>
     </i-cover>

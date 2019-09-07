@@ -1,5 +1,5 @@
 <template>
-  <section class="main__slider">
+  <section class="slider">
     <div class="box">
       <h1>main__slider1</h1>
       <!-- <img src="//unsplash.it/200/200" alt="" class="hero-img" /> -->
@@ -31,8 +31,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main__slider {
-  background: $color-light;
+.slider {
+  // background: $color-light;
   padding: 1.5rem;
 }
 </style>

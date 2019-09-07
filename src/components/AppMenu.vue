@@ -19,21 +19,18 @@
 </template>
 
 <script>
+import links_iSimple from './iSimple/links.js'
 export default {
   name: 'app-menu',
   data() {
     return {
-      nav_link: [
-        // { name: 'Home', path: '/' },
-        // { name: 'CssGrid', path: '/css-grid' },
-        // { name: 'GridWeb', path: '/grid-web' },
-        // { name: 'iSimple', path: '/isimple' },
-
-        { title: 'Home', route: { name: 'home', path: '/' } },
-        { title: 'About', route: { name: 'about', path: '/about' } },
-        { title: 'Works', route: { name: 'works', path: '/works' } },
-        { title: 'Projects', route: { name: 'projects', path: '/projects' } },
-      ],
+      // nav_link: [
+      //   { title: 'Home', route: { name: 'home', path: '/' } },
+      //   { title: 'About', route: { name: 'about', path: '/about' } },
+      //   { title: 'Works', route: { name: 'works', path: '/works' } },
+      //   { title: 'Projects', route: { name: 'projects', path: '/projects' } },
+      // ],
+      nav_link: links_iSimple,
     }
   },
 }

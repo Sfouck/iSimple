@@ -3,7 +3,7 @@
     <i-cover class="about about__cover" :background-url="cover_image">
       <template #title>
         <h1>
-          地方創生計畫 - 店家資訊
+          地方創生計畫 - 聯絡資訊
         </h1>
       </template>
     </i-cover>
@@ -31,7 +31,7 @@ export default {
             '//www.thecan.com.tw/cdn/upload/image/20181116/77841418-d478-41f7-aea9-36514e7b8cd1.jpg',
           title: '小草書屋',
           description:
-            '一群社區返鄉青年和社區志工深耕新北三峽為高關懷的兒童打造一個社區培育系統。',
+            '一群社區返鄉青年和社區志工深耕為高關懷的兒童打造一個社區培育系統。',
           tags: ['社區規劃', '品牌設計', '空間規劃', '小草書屋'],
           link: '//www.thecan.com.tw/tw/creative/detail/402',
         },

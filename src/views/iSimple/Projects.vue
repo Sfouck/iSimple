@@ -227,33 +227,6 @@ export default {
     padding: 6px 15px 10px;
     position: relative;
     z-index: 0;
-
-    .toggler-info {
-      border-radius: 32px;
-      height: 32px;
-      padding: 0;
-      position: absolute;
-      right: 15px;
-      top: 10px;
-      width: 32px;
-      span {
-        background: white;
-        display: block;
-        height: 2px;
-        position: absolute;
-        top: 16px;
-        transition: all 0.15s 0s ease-out;
-        width: 12px;
-        &.left {
-          right: 14px;
-          transform: rotate(45deg);
-        }
-        &.right {
-          left: 14px;
-          transform: rotate(-45deg);
-        }
-      }
-    }
     h2 {
       font-size: 1.5em;
       font-weight: 700;
@@ -264,6 +237,33 @@ export default {
         display: block;
         font-weight: 600;
         letter-spacing: -0.025em;
+      }
+    }
+  }
+
+  .toggler-info {
+    border-radius: 32px;
+    height: 32px;
+    padding: 0;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 32px;
+    span {
+      background: white;
+      display: block;
+      height: 2px;
+      position: absolute;
+      top: 16px;
+      transition: all 0.15s 0s ease-out;
+      width: 12px;
+      &.left {
+        right: 14px;
+        transform: rotate(45deg);
+      }
+      &.right {
+        left: 14px;
+        transform: rotate(-45deg);
       }
     }
   }
@@ -283,7 +283,7 @@ export default {
   }
 }
 
-.projects__video-grid.cards {
+.cards {
   &.showing {
     > .card {
       cursor: pointer;

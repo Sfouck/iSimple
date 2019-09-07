@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import './style/reset.css';
+// @import './style/reset.css';
 @import './style/normalize.css';
 #app {
   // margin: 0;

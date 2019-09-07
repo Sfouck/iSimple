@@ -1,12 +1,12 @@
 <template>
-  <div class="card">
-    <div class="card__thumb">
+  <div class="video-card">
+    <div class="video-card__thumb">
       <slot name="thumbnail">
-        <img :src="img" alt="card_thumb" />
+        <img :src="thumbnailURL" alt="video-card_thumb" />
       </slot>
     </div>
 
-    <div class="card__content">
+    <div class="video-card__content">
       <div class="text-area">
         <div class="text-area__title">
           <slot name="title">
@@ -24,9 +24,9 @@
       </div>
     </div>
 
-    <div class="card__link-box" v-if="link">
-      <a :href="link">
-        <p>深入瞭解</p>
+    <div class="video-card__link-box">
+      <a href="" @click.prevent="openVideo">
+        <p>觀看影片</p>
       </a>
     </div>
   </div>
@@ -34,14 +34,25 @@
 
 <script>
 export default {
-  name: 'ICard',
-  props: ['img', 'title', 'description', 'tags', 'link'],
+  name: 'IVideoCard',
+  props: ['title', 'description', 'tags', 'videoid'],
+  methods: {
+    openVideo: function() {
+      // console.log(this.videoid)
+      this.$emit('open', this.videoid)
+    },
+  },
+  computed: {
+    thumbnailURL: function() {
+      return `//img.youtube.com/vi/${this.videoid}/0.jpg`
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 $area_line-height: 1.2rem;
-.card {
+.video-card {
   min-width: 200px;
   position: relative;
 
@@ -157,7 +168,7 @@ $area_line-height: 1.2rem;
 }
 
 @media screen and (min-width: 1023.98px) {
-  .card {
+  .video-card {
     &__content {
       .tag-area {
         height: ($area_line-height + 0.5rem) * 2;
