@@ -7,11 +7,6 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'root',
-    //   redirect: '/isimple',
-    // },
     {
       path: '/',
       component: () =>
@@ -47,6 +42,12 @@ export default new Router({
           component: () =>
             import(/* webpackChunkName: "isimple-projects" */ './views/iSimple/Projects.vue'),
         },
+        {
+          path: 'detail/:id',
+          name: 'detail',
+          component: () =>
+            import(/* webpackChunkName: "isimple-detail" */ './views/iSimple/Detail.vue'),
+        },
       ],
     },
     {
@@ -55,6 +56,7 @@ export default new Router({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
+    // console.log(to, from, savedPosition)
     if (savedPosition) {
       return savedPosition
     } else {

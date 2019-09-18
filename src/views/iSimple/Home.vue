@@ -115,8 +115,8 @@
 </template>
 
 <script>
-import iCard from '../../components/iSimple/Card.vue'
-import iVideoCard from '../../components/iSimple/VideoCard.vue'
+import iCard from '@/components/iSimple/Card.vue'
+import iVideoCard from '@/components/iSimple/VideoCard.vue'
 export default {
   // name: 'isimple-home',
   data() {
@@ -128,7 +128,7 @@ export default {
         description:
           '一群社區返鄉青年和社區志工深耕為高關懷的兒童打造一個社區培育系統。',
         tags: ['社區規劃', '品牌設計', '空間規劃', '小草書屋'],
-        link: '//www.thecan.com.tw/tw/creative/detail/402',
+        link: '/detail/1',
       },
       {
         img:
@@ -137,7 +137,7 @@ export default {
         description:
           '青草是社區裡中輟及弱勢青少年。 因家庭困境，面臨學習落後，甚至離開學校，失去人生方',
         tags: ['社區設計', '青草職能學苑', '愛鄰醫院', '品牌設計'],
-        link: '//www.thecan.com.tw/tw/creative/detail/411',
+        link: '/detail/2',
       },
       {
         img:
@@ -145,7 +145,7 @@ export default {
         title: '樂心 產後護理之家',
         description: '快樂安心的產後護理最佳選擇。',
         tags: ['品牌設計', '樂心 產後護理之家'],
-        link: '//www.thecan.com.tw/tw/creative/detail/522',
+        link: '/detail/3',
       },
     ]
     return {

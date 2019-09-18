@@ -25,9 +25,12 @@
     </div>
 
     <div class="card__link-box" v-if="link">
-      <a :href="link">
+      <!-- <a :href="link">
         <p>深入瞭解</p>
-      </a>
+      </a> -->
+      <router-link :to="link">
+        <p>深入瞭解</p>
+      </router-link>
     </div>
   </div>
 </template>
