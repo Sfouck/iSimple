@@ -8,7 +8,7 @@
       </div>
     </header>
     <main>
-      <transition name="fade" mode="out-in">
+      <transition name="fade" mode="out-in" @beforeEnter="beforeEnter" appear>
         <!-- <keep-alive><router-view> </router-view></keep-alive> -->
         <router-view> </router-view>
       </transition>
@@ -36,6 +36,13 @@ export default {
     return {
       nav_links: links_iSimple,
     }
+  },
+  methods: {
+    beforeEnter(el) {
+      console.log(el, window.scrollY)
+      this.$root.$emit('scrollBeforeEnter')
+      // done()
+    },
   },
   // components: { 'app-menu': AppMenu },
 }
@@ -74,6 +81,9 @@ img {
 .wrapper {
   > header {
     box-shadow: $shadow-default;
+    background-color: $color-light;
+    position: sticky;
+    top: 0;
     padding: 0 10vw;
     z-index: 1000;
     .btn-menu {
@@ -89,7 +99,7 @@ img {
 .fade-leave-active {
   transition-duration: 0.3s;
   transition-property: opacity;
-  transition-timing-function: ease;
+  transition-timing-function: ease-in-out;
 }
 
 .fade-enter,

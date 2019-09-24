@@ -20,21 +20,21 @@
 
     <!-- <slot name="crumb" /> -->
 
-    <article class="news">
+    <!-- <article class="news">
       <hgroup>
         <h1>NEWS</h1>
-        <h2>NEWS</h2>
+        <h2>NEWS-副標題</h2>
       </hgroup>
       <section>
         <i-card v-for="(news, index) in news_list" v-bind="news" :key="index">
         </i-card>
       </section>
-    </article>
+    </article> -->
 
     <article class="works">
       <hgroup>
         <h1>最新消息</h1>
-        <h2>最新消息</h2>
+        <h2>最新消息-副標題</h2>
       </hgroup>
       <section>
         <i-card
@@ -62,7 +62,7 @@
       </section>
     </article>
 
-    <article class="info">
+    <!-- <article class="info">
       <hgroup>
         <h1>好康推薦</h1>
         <h2>最受歡迎商品、體驗報乎你知</h2>
@@ -74,7 +74,7 @@
           </p>
         </i-info>
       </section>
-    </article>
+    </article> -->
 
     <!-- <i-slider></i-slider> -->
 

@@ -1,16 +1,21 @@
 <template>
   <article class="post">
-    <!-- <i-cover></i-cover> -->
-    <!-- ibreadcrum -->
+    <!-- 標題 -->
     <div class="post__title">
       <h1>{{ title }}</h1>
     </div>
+
+    <!-- 標籤 -->
     <div class="post__tags">
       <a href="" v-for="(tag, index) in tags" :key="index"> #{{ tag }} </a>
     </div>
+
+    <!-- 內文 -->
     <div class="post__content">
       <div v-html="body"></div>
     </div>
+
+    <!-- 分享區 -->
     <div class="post__share-box"></div>
   </article>
 </template>
@@ -25,43 +30,42 @@ export default {
 <style lang="scss" scoped>
 $area_line-height: 1.2rem;
 .post {
+  min-width: 50vw;
   &__tags {
-    .tag-area {
-      display: flex;
-      flex-flow: row wrap;
-      > a {
-        position: relative;
-        z-index: 0;
-        font-size: 0.8rem;
-        font-weight: bold;
-        line-height: $area_line-height;
-        height: $area_line-height;
-        overflow: hidden;
-        margin: 0.5rem 0.5rem 0 0;
-        padding: 0 6px;
-        text-decoration: none;
-        letter-spacing: 1px;
-        color: $color-dark;
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          right: 0;
-          background: rgb(219, 219, 219);
-          z-index: -1;
-        }
-        &::after {
-          content: '';
-          width: 0;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          background: darken(red, 10);
-          z-index: -1;
-        }
+    display: flex;
+    flex-flow: row wrap;
+    > a {
+      position: relative;
+      z-index: 0;
+      font-size: 0.8rem;
+      font-weight: bold;
+      line-height: $area_line-height;
+      height: $area_line-height;
+      overflow: hidden;
+      margin: 0.5rem 0.5rem 0 0;
+      padding: 0 6px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      color: $color-dark;
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgb(219, 219, 219);
+        z-index: -1;
+      }
+      &::after {
+        content: '';
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: darken(red, 10);
+        z-index: -1;
       }
     }
   }

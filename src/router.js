@@ -45,6 +45,9 @@ export default new Router({
         {
           path: 'detail/:id',
           name: 'detail',
+          meta: {
+            scrollToTop: true,
+          },
           component: () =>
             import(/* webpackChunkName: "isimple-detail" */ './views/iSimple/Detail.vue'),
         },
@@ -56,11 +59,22 @@ export default new Router({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    // console.log(to, from, savedPosition)
-    if (savedPosition) {
-      return savedPosition
+    console.log(to, from, savedPosition)
+    let position = {}
+    if (to.meta.scrollToTop) {
+      position = { x: 0, y: 0 }
     } else {
-      return { x: 0, y: 0 }
+      position = savedPosition
     }
+    // for page transition async scroll
+    return new Promise(resolve => {
+      this.app.$root.$once('scrollBeforeEnter', () => {
+        if (to.hash) {
+          resolve({ selector: to.hash })
+        } else {
+          resolve(position)
+        }
+      })
+    })
   },
 })

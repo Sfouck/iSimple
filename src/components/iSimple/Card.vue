@@ -54,6 +54,7 @@ $area_line-height: 1.2rem;
 
   &__content {
     padding: 1rem;
+    background-color: #fefefe;
     border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: lightgray;

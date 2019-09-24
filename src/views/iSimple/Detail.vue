@@ -1,18 +1,18 @@
 <template>
-  <div class="page__detail">
-    <i-cover :background-url="cover_background">
-      <template #title>
+  <div class="page__detail detail">
+    <i-cover class="detail__cover" :background-url="cover_background">
+      <!-- <template #title>
         <h1>
-          地方創生計畫
+          {{ posts_data.title }}
         </h1>
-      </template>
-      <p>
+      </template> -->
+      <!-- <p>
         木作如同生活的智者,帶領我們不斷地去學習,透過不同形式和表現,描述
         著他們所經歷的過程,提升我們的想法與見解。
-      </p>
+      </!-->
     </i-cover>
     <!-- ibreadcrumb -->
-    <i-post v-bind="post_data"></i-post>
+    <i-post class="detail__post" v-bind="post_data"></i-post>
   </div>
 </template>
 
@@ -22,27 +22,31 @@ import posts from '../../assets/posts_data.js'
 export default {
   data() {
     return {
-      // cover_background: '',
+      cover_background: 'cover-home.jpg',
       post_data: {},
     }
   },
-  props: {
-    cover_background: {
-      type: String,
-      default() {
-        return 'cover-home.jpg'
-      },
-    },
-  },
+  // props: {
+  //   cover_background: {
+  //     type: String,
+  //     default() {
+  //       return 'cover-home.jpg'
+  //     },
+  //   },
+  // },
   created() {
-    this.getPostData()
+    this.fetchPostData()
+    this.cover_background = this.post_data.cover
   },
   methods: {
-    getPostData() {
+    fetchPostData() {
       let params = this.$route.params
-      // console.log(params)
-      // console.log(posts[params.id])
-      this.post_data = posts[params.id]
+      let target_post = posts.find(function(post) {
+        return post.id == params.id
+      })
+      if (target_post) {
+        this.post_data = target_post
+      }
     },
   },
   components: {
@@ -51,4 +55,11 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.detail {
+  &__post {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+</style>
