@@ -2,7 +2,7 @@
   <div class="menu-wrap">
     <input type="checkbox" class="toggler" />
     <div class="hamburger"><div></div></div>
-    <div class="app__menu">
+    <div class="app__menu ">
       <div>
         <nav>
           <ul>

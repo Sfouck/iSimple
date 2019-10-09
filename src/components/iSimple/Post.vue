@@ -11,8 +11,8 @@
     </div>
 
     <!-- 內文 -->
-    <div class="post__content">
-      <div v-html="body"></div>
+    <div class="post__content" v-html="body">
+      <!-- <div v-html="body"></div> -->
     </div>
 
     <!-- 分享區 -->
@@ -31,6 +31,13 @@ export default {
 $area_line-height: 1.2rem;
 .post {
   min-width: 50vw;
+  &__content {
+    ::v-deep {
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
   &__tags {
     display: flex;
     flex-flow: row wrap;

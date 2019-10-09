@@ -6,7 +6,7 @@
       </slot>
     </div>
 
-    <div class="card__content">
+    <div class="card__content card">
       <div class="text-area">
         <div class="text-area__title">
           <slot name="title">
@@ -54,7 +54,7 @@ $area_line-height: 1.2rem;
 
   &__content {
     padding: 1rem;
-    background-color: #fefefe;
+    background-color: $color-light;
     border-width: 0 1px 1px 1px;
     border-style: solid;
     border-color: lightgray;

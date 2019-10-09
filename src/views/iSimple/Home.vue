@@ -4,13 +4,13 @@
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
-          地方創生計畫
+          水林x愛x簡單
         </h1>
       </template>
-      <p>
+      <!-- <p>
         木作如同生活的智者,帶領我們不斷地去學習,透過不同形式和表現,描述
         著他們所經歷的過程,提升我們的想法與見解。
-      </p>
+      </!-->
       <!-- <template #button>
         <a class="btn" @click="showModal = true">
           Read More(Open Modal)
@@ -78,7 +78,7 @@
 
     <!-- <i-slider></i-slider> -->
 
-    <section class="subscription">
+    <!-- <section class="subscription">
       <h1>訂閱電子報</h1>
       <button id="show-modal" @click="showModal = true">Show Modal</button>
       <h3>
@@ -92,7 +92,7 @@
         </div>
         <input type="submit" value="送出" />
       </form>
-    </section>
+    </section> -->
 
     <i-modal v-if="showModal" @close="showModal = false">
       <!-- <template #header> </template> -->

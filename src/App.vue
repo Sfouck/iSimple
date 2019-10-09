@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <!-- <AppMenu></AppMenu> -->
-    <app-menu></app-menu>
+    <!-- <app-menu></app-menu> -->
     <router-view id="app__view" />
   </div>
 </template>
 
 <script>
-import AppMenu from '@/components/AppMenu'
+// import AppMenu from '@/components/AppMenu'
 export default {
   name: 'app',
-  components: { AppMenu },
+  // components: { AppMenu },
 }
 </script>
 

@@ -1,11 +1,46 @@
-// $color-primary: #ddd;
-$color-dark: #333;
-$color-light: #f8f9fa;
-$color-white: #fff;
-$color-primary: #007bff;
-$color-secondary: #6c757d;
-$color-success: #28a745;
-$color-info: #17a2b8;
-$color-warning: #ffc107;
-$color-danger: #dc3545;
+@charset 'UTF-8';
+@import 'color';
 $shadow-default: 0 1px 5px rgba(104, 104, 104, 0.8);
+
+$breakpoints: (
+  desktop: 960px,
+  mobile: 568px,
+);
+
+@mixin for-desktop {
+  @media screen and (min-width: map-get($breakpoints, 'desktop')) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media screen and (max-width: map-get($breakpoints, 'mobile')) {
+    @content;
+  }
+}
+
+@mixin btn-hamburger($width, $height: $width,$color) {
+  $weight: 2px;
+  $spacing: ($height - $weight * 3) / 2.75 ;
+  width: $width;
+  height: $weight;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background-color: $color;
+  position: absolute;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: $width;
+    height: $weight;
+    background: inherit;
+  }
+  &::after {
+    top: $spacing;
+  }
+  &::before {
+    top: $spacing * -1;
+  }
+}
