@@ -24,11 +24,10 @@ import iCard from '../../components/iSimple/Card.vue'
 export default {
   data() {
     return {
-      cover_image: 'cover-about.jpg',
+      cover_image: 'cover/cover-about.jpg',
       shop_list: [
         {
-          img:
-            '//www.thecan.com.tw/cdn/upload/image/20181116/77841418-d478-41f7-aea9-36514e7b8cd1.jpg',
+          img: '/img/detail/inn_cover.jpg',
           title: '小草書屋',
           description:
             '一群社區返鄉青年和社區志工深耕為高關懷的兒童打造一個社區培育系統。',
@@ -36,8 +35,7 @@ export default {
           link: '//www.thecan.com.tw/tw/creative/detail/402',
         },
         {
-          img:
-            '//www.thecan.com.tw/cdn/upload/image/20181120/7c37aa00-f107-472e-8a99-a3c835e640b2.jpg',
+          img: '/img/detail/baking_cover.jpg',
           title: '青草職能學苑募資計畫',
           description:
             '青草是社區裡中輟及弱勢青少年。 因家庭困境，面臨學習落後，甚至離開學校，失去人生方',

@@ -67,7 +67,7 @@ export default {
         hasShow: false,
         isShowing: false,
       },
-      cover_image: '/cover-video.jpg',
+      cover_image: '/cover/cover-video.jpg',
       video_list: [
         { vid: '1DXUWTUX4gU', vtitle: '水林小陳' },
         { vid: 'eMrPsnlhLtk', vtitle: '五木工坊' },

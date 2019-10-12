@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import epaper_data from './epaper.js'
+import epaper_data from '@/assets/data/epaper.js'
 export default {
   data() {
     let sortOrders = {}
@@ -51,7 +51,7 @@ export default {
       sortOrders[key] = 1
     })
     return {
-      cover_image: 'cover-epaper.jpg',
+      cover_image: 'cover/cover-epaper.jpg',
       epaper_table: {
         columns: columns,
         filiterKey: '',

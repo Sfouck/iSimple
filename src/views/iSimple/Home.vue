@@ -4,37 +4,17 @@
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
-          水林x愛x簡單
+          愛x簡單x水林
         </h1>
       </template>
-      <!-- <p>
-        木作如同生活的智者,帶領我們不斷地去學習,透過不同形式和表現,描述
-        著他們所經歷的過程,提升我們的想法與見解。
-      </!-->
-      <!-- <template #button>
-        <a class="btn" @click="showModal = true">
-          Read More(Open Modal)
-        </a>
-      </template> -->
     </i-cover>
 
     <!-- <slot name="crumb" /> -->
 
-    <!-- <article class="news">
-      <hgroup>
-        <h1>NEWS</h1>
-        <h2>NEWS-副標題</h2>
-      </hgroup>
-      <section>
-        <i-card v-for="(news, index) in news_list" v-bind="news" :key="index">
-        </i-card>
-      </section>
-    </article> -->
-
     <article class="works">
       <hgroup>
         <h1>最新消息</h1>
-        <h2>最新消息-副標題</h2>
+        <!-- <h2>最新消息-副標題</h2> -->
       </hgroup>
       <section>
         <i-card
@@ -61,22 +41,6 @@
         </i-video-card>
       </section>
     </article>
-
-    <!-- <article class="info">
-      <hgroup>
-        <h1>好康推薦</h1>
-        <h2>最受歡迎商品、體驗報乎你知</h2>
-      </hgroup>
-      <section>
-        <i-info v-for="info in infos" :key="info.id" :info="info.data">
-          <p>
-            <strong>I'm slot test!</strong>
-          </p>
-        </i-info>
-      </section>
-    </article> -->
-
-    <!-- <i-slider></i-slider> -->
 
     <!-- <section class="subscription">
       <h1>訂閱電子報</h1>
@@ -122,8 +86,7 @@ export default {
   data() {
     let temp_list = [
       {
-        img:
-          '//www.thecan.com.tw/cdn/upload/image/20181116/77841418-d478-41f7-aea9-36514e7b8cd1.jpg',
+        img: '/img/detail/woodwork_cover.jpg',
         title: '小草書屋',
         description:
           '一群社區返鄉青年和社區志工深耕為高關懷的兒童打造一個社區培育系統。',
@@ -131,8 +94,7 @@ export default {
         link: '/detail/1',
       },
       {
-        img:
-          '//www.thecan.com.tw/cdn/upload/image/20181120/7c37aa00-f107-472e-8a99-a3c835e640b2.jpg',
+        img: '/img/detail/baking_cover.jpg',
         title: '青草職能學苑募資計畫',
         description:
           '青草是社區裡中輟及弱勢青少年。 因家庭困境，面臨學習落後，甚至離開學校，失去人生方',
@@ -140,8 +102,7 @@ export default {
         link: '/detail/2',
       },
       {
-        img:
-          '//www.thecan.com.tw/cdn/upload/image/20181213/3862afb8-5f6f-4da6-8b5d-6a439882dcf6.jpg',
+        img: '/img/detail/bat_cover.jpg',
         title: '樂心 產後護理之家',
         description: '快樂安心的產後護理最佳選擇。',
         tags: ['品牌設計', '樂心 產後護理之家'],
@@ -149,7 +110,7 @@ export default {
       },
     ]
     return {
-      cover_background: '/cover-home.jpg',
+      cover_background: '/cover/cover-home.jpg',
       showModal: false,
       news_list: temp_list,
       works_list: temp_list,
@@ -168,40 +129,6 @@ export default {
             '不惑之年的楊詔期先生,從事木工產業已逾 16 年。逐漸地體會到土木工程並非自己的志業,在 2008 年毅然決然地回到水林老家。',
           tags: ['五木工坊'],
           videoid: 'eMrPsnlhLtk',
-        },
-      ],
-      infos: [
-        {
-          id: 1,
-          data: {
-            media_url: '//unsplash.it/200/200',
-            title: 'home__info1',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-        },
-        {
-          id: 2,
-          data: {
-            media_url: '//unsplash.it/200/201',
-            title: 'home__info2',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-        },
-        {
-          id: 3,
-          data: {
-            media_url: '//unsplash.it/200/202',
-            title: 'home__info3',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-        },
-        {
-          id: 4,
-          data: {
-            media_url: '//unsplash.it/200/204',
-            title: 'home__info4',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
         },
       ],
     }
@@ -280,26 +207,6 @@ export default {
     // border: lightgrey solid 1px;
   }
 }
-
-// .home__info {
-//   // background: $color-light;
-//   // background: pink;
-//   padding: 1.5rem;
-//   > hgroup {
-//     // background: lightcyan;
-//     text-align: center;
-//     padding: 1.5rem 0;
-//   }
-//   > section {
-//     //   background: lightgreen;
-//     display: grid;
-//     grid-gap: 20px;
-//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-//     grid-auto-rows: minmax(300px, auto);
-//     align-items: center;
-//     justify-items: center;
-//   }
-// }
 
 @media screen and (max-width: 1023.98px) {
   .page__home {

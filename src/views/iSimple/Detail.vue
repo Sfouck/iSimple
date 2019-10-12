@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import IPost from '../../components/iSimple/Post.vue'
-import posts from '../../assets/posts_data.js'
+import IPost from '@/components/iSimple/Post.vue'
+import posts from '@/assets/data/posts_data.js'
 export default {
   data() {
     return {

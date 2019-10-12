@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      cover_image: 'cover-works2.jpg',
+      cover_image: '/cover/cover-works2.jpg',
     }
   },
 }

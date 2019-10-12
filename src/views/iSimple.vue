@@ -2,7 +2,7 @@
   <div class="wrapper">
     <header>
       <div class="logo-box">
-        <router-link :to="routeToHome">
+        <router-link :to="{ name: 'home', path: '/' }">
           <img
             src="/img/logo.png"
             alt="Logo"
@@ -11,8 +11,8 @@
           />
         </router-link>
       </div>
-      <nav-menu :links="nav_links"></nav-menu>
-      <div class="nav__option">
+      <nav-menu :links="nav_links" :open="nav_show == true"></nav-menu>
+      <div class="nav__option" @click="toggleMenu">
         <div class="nav__hamburger"></div>
       </div>
     </header>
@@ -35,20 +35,22 @@
 
 <script>
 // import AppMenu from '@/components/AppMenu'
-import links_iSimple from '@/components/iSimple/links.js'
+import links_iSimple from '@/assets/data/links.js'
 export default {
   name: 'isimple',
   data() {
     return {
       nav_links: links_iSimple,
-      routeToHome: { name: 'home', path: '/' },
+      nav_show: false,
+      // routeToHome: { name: 'home', path: '/' },
     }
   },
   methods: {
     beforeEnter() {
-      // console.log(el, window.scrollY)
       this.$root.$emit('scrollBeforeEnter')
-      // done()
+    },
+    toggleMenu() {
+      this.nav_show = !this.nav_show
     },
   },
   // components: { 'app-menu': AppMenu },
@@ -73,7 +75,8 @@ img {
 .wrapper {
   > header {
     box-shadow: $shadow-default;
-    background-color: $color-light;
+    // background-color: $color-light;
+    background-color: white;
     position: sticky;
     top: 0;
 
@@ -82,7 +85,7 @@ img {
     // padding: 0 10vw;
 
     display: grid;
-    grid-auto-rows: minmax(80px, 10vh);
+    grid-template-rows: minmax(80px, 10vh) 50vh;
     grid-template-columns: repeat(5, 1fr);
     z-index: 1000;
     > nav {
@@ -91,6 +94,10 @@ img {
   }
   > main {
     display: grid;
+    width: 100%;
+    > section {
+      width: inherit;
+    }
   }
 }
 
@@ -105,24 +112,24 @@ section {
 }
 
 .logo-box {
-  // background: lightskyblue;
-  // flex: initial;
+  z-index: inherit;
   grid-column: 3 / 4;
-  margin: 0 auto;
+  // margin: 0 auto;
+  justify-self: center;
 
   height: 100%;
   width: fit-content;
   img {
     height: 100%;
-    // min-height: 100px;
-    // margin: 0 auto;
     object-fit: scale-down;
   }
 }
 
 .nav__option {
   display: none;
-  grid-column: 5;
+  z-index: inherit;
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
   // background: #aa9;
   // order: 1;
   .nav__hamburger {
@@ -131,19 +138,17 @@ section {
 }
 
 @media screen and (max-width: 768px) {
-  nav {
-    display: none;
+  .wrapper > header > nav {
+    // display: none;
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
+    overflow: hidden;
   }
   .nav__option {
     display: flex;
     min-height: 50px;
     align-items: center;
     justify-content: center;
-    // position: relative;
-    // height: 100%;
-    // position: absolute;
-    // top: 1.5rem;
-    // right: 1rem;
   }
 }
 
@@ -166,42 +171,4 @@ footer {
 .fade-leave-active {
   opacity: 0;
 }
-
-// .btn-gotop {
-//   &--fixed {
-//     width: 100%;
-//     position: fixed;
-//     bottom: 0;
-//     right: 10%;
-//     z-index: 50;
-//   }
-
-//   &__link {
-//     width: 42px;
-//     height: 42px;
-//     opacity: 0;
-//     -webkit-transition: 0.5s;
-//     transition: 0.5s;
-//     position: absolute;
-//     left: 100%;
-//     bottom: 0;
-//     border: 1px solid #333;
-//     background: #fff;
-//   }
-// }
-
-// .btn {
-//   background: $color-dark;
-//   color: $color-light;
-//   padding: 0.6rem 1.3rem;
-//   text-decoration: none;
-//   border: 0;
-//   border-radius: 3px;
-//   cursor: pointer;
-//   transition: 0.6s;
-//   &:hover {
-//     background: $color-light;
-//     color: $color-dark;
-//   }
-// }
 </style>
