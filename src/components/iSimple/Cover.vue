@@ -48,8 +48,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@font-face {
+  font-family: 'SetoFont';
+  src: url('/font/setofont/cover.eot'); /* IE9 */
+  src: url('/font/setofont/cover.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/font/setofont/cover.woff') format('woff'),
+    /* chrome, firefox */ url('/font/setofont/cover.ttf') format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url('/font/setofont/cover.svg#SetoFont') format('svg'); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: normal;
+}
 .cover {
   overflow: hidden;
+  &__title {
+    font-family: 'SetoFont', 'Noto Sans', '微軟正黑體', Arial, Helvetica,
+      sans-serif;
+    font-size: 2rem;
+    > {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-size: 3em;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__body {
+    font-size: 1.3rem;
+    // margin-top: 0;
+  }
+
   &__showcase {
     min-height: 500px;
     line-height: 1.5;
@@ -91,16 +123,6 @@ export default {
     > div {
       padding: 0.5rem;
       text-align: center;
-    }
-    .cover__title {
-      font-size: 2rem;
-      font-weight: bold;
-      // margin-bottom: 0;
-    }
-
-    .cover__body {
-      font-size: 1.3rem;
-      // margin-top: 0;
     }
   }
 }

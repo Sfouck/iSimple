@@ -3,7 +3,7 @@
     <i-cover :background-url="cover_image">
       <template #title>
         <h1>
-          地方創生計畫 - 電子報
+          電子報
         </h1>
       </template>
     </i-cover>
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import epaper_data from '@/assets/data/epaper.js'
+import epaper_data from '@/assets/js/epaper.js'
 export default {
   data() {
     let sortOrders = {}

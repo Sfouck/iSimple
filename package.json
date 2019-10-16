@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "markdown-it": "^10.0.0",
     "swiper": "^4.5.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
@@ -27,9 +28,11 @@
     "eslint-config-prettier": "^5.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
+    "file-loader": "^4.2.0",
     "lint-staged": "^8.2.1",
     "node-sass": "^4.12.0",
     "popper.js": "^1.15.0",
+    "raw-loader": "^3.1.0",
     "sass": "^1.22.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10",

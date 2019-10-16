@@ -1,42 +1,47 @@
 <template>
   <div class="page__detail detail">
     <i-cover class="detail__cover" :background-url="cover_background">
-      <!-- <template #title>
-        <h1>
-          {{ posts_data.title }}
-        </h1>
-      </template> -->
-      <!-- <p>
-        木作如同生活的智者,帶領我們不斷地去學習,透過不同形式和表現,描述
-        著他們所經歷的過程,提升我們的想法與見解。
-      </!-->
     </i-cover>
     <!-- ibreadcrumb -->
-    <i-post class="detail__post" v-bind="post_data"></i-post>
+    <!-- <i-post class="detail__post" v-bind="post_data"></i-post> -->
+    <component
+      class="detail__post"
+      :is="post_component"
+      :post="post_data"
+    ></component>
   </div>
 </template>
 
 <script>
-import IPost from '@/components/iSimple/Post.vue'
-import posts from '@/assets/data/posts_data.js'
+// import IPost from '@/components/iSimple/Post.vue'
+import posts from '@/assets/js/details_data.js'
 export default {
+  name: 'IDetail',
   data() {
     return {
       cover_background: 'cover-home.jpg',
       post_data: {},
+      post_component: null,
     }
   },
-  // props: {
-  //   cover_background: {
-  //     type: String,
-  //     default() {
-  //       return 'cover-home.jpg'
-  //     },
-  //   },
-  // },
   created() {
     this.fetchPostData()
-    this.cover_background = this.post_data.cover
+    this.post_component = () => ({
+      // The component to load (should be a Promise)
+      component: import(`@/components/iSimple/Details/${
+        this.post_data.post_name
+      }.vue`),
+      // // A component to use while the async component is loading
+      // loading: LoadingComponent,
+      // // A component to use if the load fails
+      // error: ErrorComponent,
+      // // Delay before showing the loading component. Default: 200ms.
+      delay: 200,
+      // The error component will be displayed if a timeout is
+      // provided and exceeded. Default: Infinity.
+      timeout: 3000,
+    })
+    this.cover_background = this.post_data.cover_img
   },
   methods: {
     fetchPostData() {
@@ -48,9 +53,6 @@ export default {
         this.post_data = target_post
       }
     },
-  },
-  components: {
-    IPost,
   },
 }
 </script>

@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="tag-area">
-        <a href="" v-for="(tag, index) in tags" :key="index"> #{{ tag }} </a>
+        <a v-for="(tag, index) in tags" :key="index"> #{{ tag }} </a>
       </div>
     </div>
 
@@ -89,6 +89,7 @@ $area_line-height: 1.2rem;
       flex-flow: row wrap;
       > a {
         position: relative;
+        cursor: pointer;
         z-index: 0;
         font-size: 0.8rem;
         font-weight: bold;

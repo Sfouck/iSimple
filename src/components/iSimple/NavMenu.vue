@@ -69,23 +69,6 @@ nav {
     background-color: lighten($color-light, 1);
     transition: all 0.3s;
     transform: translateY(-100%);
-    // opacity: 0;
-    // &__item {
-    // width: 100%;
-    // display: inline-block;
-    // text-align: center;
-    // position: relative;
-    // border-bottom: 1px lightgrey soild;
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   width: 100vh;
-    //   height: 1px;
-    //   left: 0;
-    //   // bottom: 0;
-    //   background-color: lightgrey;
-    // }
-    // }
     &--opened {
       transform: translateY(0%);
     }

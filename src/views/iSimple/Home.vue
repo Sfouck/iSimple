@@ -4,37 +4,42 @@
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
-          愛x簡單x水林
+          愛<span>x</span>簡單<span>x</span>水林
         </h1>
       </template>
     </i-cover>
 
     <!-- <slot name="crumb" /> -->
 
-    <article class="works">
+    <article class="news">
       <hgroup>
-        <h1>最新消息</h1>
+        <h1>NEWS</h1>
         <!-- <h2>最新消息-副標題</h2> -->
       </hgroup>
       <section>
-        <i-card
-          v-for="(works, index) in works_list"
-          v-bind="works"
-          :key="index"
-        >
+        <i-card v-for="(news, index) in news_list" v-bind="news" :key="index">
         </i-card>
       </section>
     </article>
 
+    <article class="quote">
+      <hgroup class="quote__sentence">
+        <h1>木工手作的靈感來自生活中不同接觸和體悟。</h1>
+        <h1>每一件獨特作品都隱含著「適材適所」的哲思。</h1>
+      </hgroup>
+      <p class="quote__leave-blank">.</p>
+    </article>
+
     <article class="video">
       <hgroup>
-        <h1>精選影片</h1>
-        <h2>了解本地的風光情景</h2>
+        <h1>VIDEO</h1>
+        <!-- <h2>了解本地的風光情景</h2> -->
       </hgroup>
       <section>
         <i-video-card
           v-for="(video, index) in video_list"
           v-bind="video"
+          :id="index"
           :key="index"
           @open="openModalVideo"
         >
@@ -81,54 +86,35 @@
 <script>
 import iCard from '@/components/iSimple/Card.vue'
 import iVideoCard from '@/components/iSimple/VideoCard.vue'
+import details_data from '@/assets/js/details_data.js'
 export default {
   // name: 'isimple-home',
   data() {
-    let temp_list = [
-      {
-        img: '/img/detail/woodwork_cover.jpg',
-        title: '小草書屋',
-        description:
-          '一群社區返鄉青年和社區志工深耕為高關懷的兒童打造一個社區培育系統。',
-        tags: ['社區規劃', '品牌設計', '空間規劃', '小草書屋'],
-        link: '/detail/1',
-      },
-      {
-        img: '/img/detail/baking_cover.jpg',
-        title: '青草職能學苑募資計畫',
-        description:
-          '青草是社區裡中輟及弱勢青少年。 因家庭困境，面臨學習落後，甚至離開學校，失去人生方',
-        tags: ['社區設計', '青草職能學苑', '愛鄰醫院', '品牌設計'],
-        link: '/detail/2',
-      },
-      {
-        img: '/img/detail/bat_cover.jpg',
-        title: '樂心 產後護理之家',
-        description: '快樂安心的產後護理最佳選擇。',
-        tags: ['品牌設計', '樂心 產後護理之家'],
-        link: '/detail/3',
-      },
-    ]
+    for (let detail of details_data) {
+      detail.link = `/detail/${detail.id}`
+      detail.img = `/img/${detail.cover_img}`
+    }
     return {
       cover_background: '/cover/cover-home.jpg',
       showModal: false,
-      news_list: temp_list,
-      works_list: temp_list,
+      news_list: details_data,
       current_video: 'hgVtUkRf_Cc',
       video_list: [
         {
-          title: '水林小陳',
+          title: '水賊林',
+          img: '/img/detail/tsai_cover.jpg',
           description:
-            '陳弘益積極與臨近之有機或友善耕作小農交流合作，並籌組果菜生產合作社，目前合作社員所生產之作物，主要運往果菜拍賣市場，小部份自產自銷。',
-          tags: ['水林小陳'],
-          videoid: '1DXUWTUX4gU',
+            '蔡得黃，綽號：菜刀。雖是農家子弟，但沒有任何務農經驗。曾任職傳播事業的他，2010年返鄉回到水林展開土地耕種。',
+          tags: ['水賊林'],
+          videoid: '3HETAzb_bwE',
         },
         {
           title: '五木工坊',
+          img: '/img/detail/woodwork_cover.jpg',
           description:
             '不惑之年的楊詔期先生,從事木工產業已逾 16 年。逐漸地體會到土木工程並非自己的志業,在 2008 年毅然決然地回到水林老家。',
           tags: ['五木工坊'],
-          videoid: 'eMrPsnlhLtk',
+          videoid: 'HoVayGW_Dtc',
         },
       ],
     }
@@ -146,13 +132,190 @@ export default {
     },
   },
   components: {
-    iCard,
+    'i-card': iCard,
     'i-video-card': iVideoCard,
   },
 }
 </script>
 
 <style lang="scss" scoped>
+$home__article-padding: 1.5rem;
+
+.page__home {
+  // > article {
+  //   > hgroup {
+  //     text-align: center;
+  //     padding: $home__article-padding 0;
+  //   }
+  // }
+  overflow: hidden;
+}
+
+.news {
+  width: 75%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  hgroup {
+    position: relative;
+    text-align: center;
+  }
+  h1 {
+    &::after,
+    &::before {
+      content: '';
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      width: 30%;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+
+  section {
+    position: relative;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+  }
+}
+
+.quote {
+  background-color: lighten(#e4f3ee, 7);
+  // margin: 0 auto;
+  padding: 20vh 0 0 0;
+  // width: 90%;
+  display: grid;
+  justify-content: center;
+  // align-items: center;
+  grid-auto-columns: 90%;
+  grid-auto-rows: 1fr;
+  &__sentence {
+    display: table;
+    // width: fit-content;
+    margin: 0 auto;
+
+    > h1 {
+      position: relative;
+      // margin: inherit auto inherit auto;
+      // margin-left: auto;
+      // margin-right: auto;
+      text-align: center;
+      width: 100%;
+      line-height: 4rem;
+      display: table;
+      quotes: '\201C''\201D''\2018''\2019';
+      &::before,
+      &::after {
+        position: absolute;
+        font-size: 4.5rem;
+        font-weight: bold;
+      }
+      &::before {
+        content: open-quote;
+        right: 100%;
+        // bottom: -1.75rem;
+      }
+      &::after {
+        content: close-quote;
+        left: 100%;
+        // bottom: -1.5rem;
+      }
+    }
+  }
+  &__leave-blank {
+    // display: table;
+    width: fit-content;
+    // margin: 0 auto 10vh auto;
+    margin: 0 auto;
+    font-size: 5rem;
+    line-height: 3rem;
+    // padding: 0rem;
+    &::before,
+    &::after {
+      content: '.';
+      display: block;
+      font-size: inherit;
+    }
+  }
+}
+
+.video {
+  // margin: 0 auto;
+  // width: 90%;
+  background-color: lighten(#e4f3ee, 5);
+  padding: 1rem;
+  h1 {
+    width: fit-content;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    font-size: 3em;
+    //display: table;  //for ie browser support
+    &::after {
+      content: '';
+      background-color: black;
+      display: block;
+      height: 2px;
+      // width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  > section {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 2rem;
+    // // grid-template-columns: repeat(3, minmax(250px, 1fr));
+    // grid-auto-columns: 1fr;
+    // grid-auto-rows: 1fr;
+  }
+}
+
+@media screen and (max-width: 1023.98px) {
+  .page__home {
+    article {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .news {
+    > section {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  .quote {
+    &__sentence {
+      > h1 {
+        display: inline-block;
+        &::before {
+          top: -10%;
+          /* left: -20%; */
+          right: 95%;
+        }
+        &::after {
+          // left: 90%;
+          // bottom: -2rem;
+          left: 95%;
+          bottom: -35%;
+        }
+      }
+    }
+  }
+
+  .video {
+    > section {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+}
+
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%; //16:9
@@ -183,40 +346,6 @@ export default {
   }
   > form > * {
     display: inline-block;
-  }
-}
-
-.page__home {
-  > article {
-    $home__article-padding: 1.5rem;
-    width: 80%;
-    margin: 0 auto;
-    padding: $home__article-padding;
-    > hgroup {
-      text-align: center;
-      padding: $home__article-padding 0;
-    }
-    > section {
-      // padding: 2rem 10%;
-      position: relative;
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: repeat(3, minmax(250px, 1fr));
-      grid-auto-rows: 1fr;
-    }
-    // border: lightgrey solid 1px;
-  }
-}
-
-@media screen and (max-width: 1023.98px) {
-  .page__home {
-    > article {
-      padding: 0;
-      > section {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        // grid-auto-rows: 1fr;
-      }
-    }
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <i-cover class="about about__cover" :background-url="cover_image">
       <template #title>
         <h1>
-          地方創生計畫 - 聯絡資訊
+          聯絡資訊
         </h1>
       </template>
     </i-cover>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import iCard from '../../components/iSimple/Card.vue'
+import iCard from '@/components/iSimple/Card.vue'
 export default {
   data() {
     return {

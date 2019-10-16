@@ -3,16 +3,17 @@
     <i-cover class="projects__cover" :background-url="cover_image">
       <template #title>
         <h1>
-          木作
+          <!-- 木作 -->
+          過往水林
         </h1>
       </template>
-      <section>
+      <!-- <section>
         <p>
           木工手作的靈感來自生活中不同接觸和體悟。<br />
           手作的本質呈現的是一種單純且令人感動的痕跡,同時靜靜地勾勒出簡約的線條,體現木頭樸質的紋路以及沉穩的呼吸與溫潤的質性。
           每一件獨特作品都隱含著「適材適所」的哲思。
         </p>
-      </section>
+      </section> -->
     </i-cover>
 
     <section
@@ -71,16 +72,16 @@ export default {
       video_list: [
         { vid: '1DXUWTUX4gU', vtitle: '水林小陳' },
         { vid: 'eMrPsnlhLtk', vtitle: '五木工坊' },
-        {
-          vid: 'Ff5Bu0Gi2b4',
-          vtitle: 'Hong Kong Island Drone Tour',
-        },
-        { vid: 'Fz5s1ZSZusY', vtitle: 'City of Singapore - 2018' },
-        { vid: '1Ezccc5O5Pc', vtitle: 'Top 5 Dubai Mega Projects' },
-        {
-          vid: 'LhdkD6CY9HE',
-          vtitle: 'Hotel Dubai Hotel Atlantis The Palm Dubai booking',
-        },
+        // {
+        //   vid: 'Ff5Bu0Gi2b4',
+        //   vtitle: 'Hong Kong Island Drone Tour',
+        // },
+        // { vid: 'Fz5s1ZSZusY', vtitle: 'City of Singapore - 2018' },
+        // { vid: '1Ezccc5O5Pc', vtitle: 'Top 5 Dubai Mega Projects' },
+        // {
+        //   vid: 'LhdkD6CY9HE',
+        //   vtitle: 'Hotel Dubai Hotel Atlantis The Palm Dubai booking',
+        // },
       ],
       current_video: '',
     }
@@ -273,7 +274,7 @@ export default {
     width: 100%;
     img {
       margin: -10% 0;
-      // width: 100%;
+      width: 100%;
     }
   }
 

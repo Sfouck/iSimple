@@ -35,7 +35,7 @@
 
 <script>
 // import AppMenu from '@/components/AppMenu'
-import links_iSimple from '@/assets/data/links.js'
+import links_iSimple from '@/assets/js/links.js'
 export default {
   name: 'isimple',
   data() {
@@ -115,12 +115,13 @@ section {
   z-index: inherit;
   grid-column: 3 / 4;
   // margin: 0 auto;
-  justify-self: center;
+  // justify-self: center;
 
   height: 100%;
-  width: fit-content;
+  // width: fit-content;
   img {
     height: 100%;
+    margin: 0 auto;
     object-fit: scale-down;
   }
 }
@@ -157,7 +158,11 @@ footer {
   background: $color-dark;
   color: $color-light;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 0 1.5rem 0;
+  border: #333 solid;
+  // border-top-width: 3rem;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
 }
 
 .fade-enter-active,

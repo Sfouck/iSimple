@@ -1,8 +1,9 @@
 <template>
-  <div class="video-card">
+  <div class="video-card" ref="videoCard">
     <div class="video-card__thumb">
       <slot name="thumbnail">
-        <img :src="thumbnailURL" alt="video-card_thumb" />
+        <!-- <img :src="thumbnailURL" alt="video-card__thumb" /> -->
+        <img :src="img" alt="video-card__thumb" />
       </slot>
     </div>
 
@@ -35,7 +36,15 @@
 <script>
 export default {
   name: 'IVideoCard',
-  props: ['title', 'description', 'tags', 'videoid'],
+  props: ['title', 'description', 'tags', 'videoid', 'id', 'img'],
+  mounted() {
+    let videoCard = this.$refs.videoCard
+    if (this.id % 2 === 0) {
+      videoCard.classList.add('video-card--even')
+    } else {
+      videoCard.classList.add('video-card--odd')
+    }
+  },
   methods: {
     openVideo: function() {
       // console.log(this.videoid)
@@ -52,12 +61,17 @@ export default {
 
 <style lang="scss" scoped>
 $area_line-height: 1.2rem;
+$color-link-border: darken(#cde8df, 13);
+$color-link-background: darken(#cce5c7, 13);
 .video-card {
   min-width: 200px;
   position: relative;
 
   &__thumb {
     width: 100%;
+    img {
+      width: inherit;
+    }
   }
 
   &__content {
@@ -168,34 +182,115 @@ $area_line-height: 1.2rem;
 }
 
 @media screen and (min-width: 1023.98px) {
+  $area_line-height: 2rem;
   .video-card {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    &__thumb {
+      grid-row: 1 / 6;
+      z-index: 1;
+      align-self: center;
+      > img {
+        border-radius: 16px;
+      }
+    }
     &__content {
-      .tag-area {
-        height: ($area_line-height + 0.5rem) * 2;
-        > a:hover {
-          color: white;
-          transition: all 0s ease 0.1s;
+      grid-row: 4 / 6;
+      border: none;
+      z-index: 2;
+      .text-area {
+        background: rgba($color-dark, 0.7);
+        // height: 100%
+        border-radius: 10px;
+        padding: 1rem;
+        &__title,
+        &__description {
+          line-height: $area_line-height;
+        }
+        &__title {
+          font-size: $area_line-height;
+          color: #cce5c7;
+          text-align: center;
+          position: relative;
+          &::after,
           &::before {
-            width: 0;
-            transition: 0.3s;
+            content: '';
+            background-color: $color-light;
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 20%;
+          }
+          &::before {
+            left: 0;
           }
           &::after {
-            width: 100%;
-            transition: 0.3s 0.3s;
+            right: 0;
           }
+        }
+        &__description {
+          font-size: $area_line-height * 0.8;
+          // $describe_max-line: 3;
+          -webkit-line-clamp: initial; /* number of lines to show */
+          // height: $area_line-height * $describe_max-line; /* fallback */
+          height: auto;
+          color: #cde8df;
+          // font-weight: bold;
+          // text-shadow: 1px 1px 3px $color-dark;
         }
       }
     }
     &__link-box {
-      > a:hover {
-        background: #bf272d;
-        > p {
-          color: $color-light;
-        }
+      grid-row: 3 / 4;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > a {
+        border: 1px solid $color-link-border;
+        border-radius: 100%;
+        height: auto;
         &::after {
-          border-color: transparent $color-light;
+          margin: 29px 21px 29px 29px;
+          border-width: 21px 0 21px 36px;
+          border-color: transparent $color-link-background;
+        }
+        &:hover {
+          background-color: $color-link-background;
+          &::after {
+            border-color: transparent $color-light;
+          }
+        }
+        > p {
+          display: none;
         }
       }
+    }
+    &--odd > & {
+      &__thumb {
+        grid-column: 1 / 6;
+      }
+      &__content {
+        grid-column: 5 / 8;
+      }
+      &__link-box {
+        grid-column: 5 / 8;
+      }
+    }
+    &--even > & {
+      &__thumb {
+        grid-column: 3 / 8;
+      }
+      &__content {
+        grid-column: 1 / 4;
+      }
+      &__link-box {
+        grid-column: 1 / 4;
+      }
+    }
+    .tag-area {
+      display: none;
     }
   }
 }
