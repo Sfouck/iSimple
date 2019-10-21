@@ -49,7 +49,19 @@ $area_line-height: 1.2rem;
   position: relative;
 
   &__thumb {
+    position: relative;
     width: 100%;
+    min-height: 200px;
+    height: 30vh;
+    overflow: hidden;
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: none;
+      height: 100%;
+    }
   }
 
   &__content {

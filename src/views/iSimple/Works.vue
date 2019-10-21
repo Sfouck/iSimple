@@ -15,22 +15,23 @@
             <th
               v-for="col in epaper_table.columns"
               :key="col.key"
-              @click="sortBy(col.key)"
               :class="{ active: sortKey == col.key }"
             >
               {{ col.title | capitalize }}
               <!-- <span class="arrow" :class="sortOrder[key] > 0 ? 'asc' : 'dsc'">
               </span> -->
             </th>
-            <th>預覽</th>
+            <th>連結</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(entry, index) in filteredEpapers" :key="index">
+          <tr v-for="(entry, index) in filteredNews" :key="index">
             <td v-for="col in epaper_table.columns" :key="col.key">
               {{ entry[col.key] }}
             </td>
-            <td>+</td>
+            <td>
+              <a :href="entry.url" target="_blank">+</a>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -40,13 +41,14 @@
 </template>
 
 <script>
-import epaper_data from '@/assets/js/epaper.js'
+import epaper_data from '@/assets/js/news_data.js'
 export default {
   data() {
     let sortOrders = {}
     let columns = [
-      { title: '電子報標題', key: 'title' },
-      { title: '發佈日期', key: 'date' },
+      { title: '公告標題', key: 'title' },
+      { title: '日期', key: 'date' },
+      // { title: '連結', key: 'url' },
       // '預覽',
     ]
     columns.forEach(function(key) {
@@ -64,7 +66,7 @@ export default {
     }
   },
   computed: {
-    filteredEpapers: function() {
+    filteredNews: function() {
       var sortKey = this.sortKey
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
       var order = this.sortOrders[sortKey] || 1

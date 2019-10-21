@@ -2,22 +2,13 @@
   <section class="cover">
     <div class="cover__showcase" :style="cssVars">
       <div class="cover__title">
-        <slot name="title">
-          <!-- <h1>cover</h1> -->
-        </slot>
+        <slot name="title"> </slot>
       </div>
       <div class="cover__body">
-        <slot>
-          <!-- <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi eaque
-            inventore odit esse quibusdam vitae iure nostrum rerum illum!
-          </!-->
-        </slot>
+        <slot> </slot>
       </div>
       <div class="cover__footer">
-        <slot name="button">
-          <!-- <a href="#" class="btn">Read More</a> -->
-        </slot>
+        <slot name="button"> </slot>
       </div>
     </div>
   </section>
@@ -31,16 +22,16 @@ export default {
       type: String,
       default: '/blogging-coding-copywriting-34140.jpg',
     },
+    height: {
+      type: String,
+      default: 'auto',
+    },
   },
-  // mounted() {
-  //   // TODO: change css setting method from v-bind to js function
-  //   const cover__showcase = this.$el.getElementsByClassName('cover__showcase')[0];
-  //   console.log(cover__showcase.get)
-  // },
   computed: {
     cssVars() {
       return {
         '--background-url': `url(/img/${this.backgroundUrl})`,
+        height: this.height,
       }
     },
   },
@@ -50,14 +41,17 @@ export default {
 <style lang="scss" scoped>
 @font-face {
   font-family: 'SetoFont';
-  src: url('/font/setofont/cover.eot'); /* IE9 */
-  src: url('/font/setofont/cover.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('/font/setofont/cover.woff') format('woff'),
-    /* chrome, firefox */ url('/font/setofont/cover.ttf') format('truetype'),
+  src: url('/font/cover/setofont.eot'); /* IE9 */
+  src: url('/font/cover/setofont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/font/cover/setofont.woff') format('woff'),
+    /* chrome, firefox */ url('/font/cover/setofont.ttf') format('truetype'),
     /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-      url('/font/setofont/cover.svg#SetoFont') format('svg'); /* iOS 4.1- */
+      url('/font/cover/setofont.svg#SetoFont') format('svg'); /* iOS 4.1- */
   font-style: normal;
   font-weight: normal;
+}
+.orangered {
+  color: orangered;
 }
 .cover {
   overflow: hidden;
@@ -75,11 +69,16 @@ export default {
         font-weight: normal;
       }
     }
+    @include for-mobile {
+      span {
+        display: block;
+        line-height: 0.5em;
+      }
+    }
   }
 
   &__body {
     font-size: 1.3rem;
-    // margin-top: 0;
   }
 
   &__showcase {
@@ -99,13 +98,12 @@ export default {
 
     &::before {
       content: '';
+      display: block;
       position: absolute;
       left: 0;
       top: 0;
       z-index: -1;
 
-      display: block;
-      // background-image: url('/img/blogging-coding-copywriting-34140.jpg');
       /* top, transparent black, faked with gradient */
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
         var(--background-url);

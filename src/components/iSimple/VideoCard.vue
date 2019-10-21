@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 $area_line-height: 1.2rem;
-$color-link-border: darken(#cde8df, 13);
+$color-link-border: darken(#cde8df, 16);
 $color-link-background: darken(#cce5c7, 13);
 .video-card {
   min-width: 200px;
@@ -251,8 +251,9 @@ $color-link-background: darken(#cce5c7, 13);
         border: 1px solid $color-link-border;
         border-radius: 100%;
         height: auto;
+        padding: 0;
         &::after {
-          margin: 29px 21px 29px 29px;
+          margin: 22px 21px 22px 29px;
           border-width: 21px 0 21px 36px;
           border-color: transparent $color-link-background;
         }

@@ -50,21 +50,14 @@ nav {
       text-decoration: none;
       font-weight: bold;
       font-size: 1.5rem;
-      transition: 0.6s;
+      transition: 0.3s;
       &:hover {
         color: $color-light;
         background: $color-dark;
       }
     }
   }
-}
-
-@media screen and (max-width: 768px) {
-  nav {
-    min-height: 50px;
-  }
-
-  .nav-menu {
+  @include for-mobile {
     flex-flow: column wrap;
     background-color: lighten($color-light, 1);
     transition: all 0.3s;
@@ -74,4 +67,20 @@ nav {
     }
   }
 }
+
+// @media screen and (max-width: 768px) {
+//   // nav {
+//   //   min-height: 50px;
+//   // }
+
+//   .nav-menu {
+//     flex-flow: column wrap;
+//     background-color: lighten($color-light, 1);
+//     transition: all 0.3s;
+//     transform: translateY(-100%);
+//     &--opened {
+//       transform: translateY(0%);
+//     }
+//   }
+// }
 </style>

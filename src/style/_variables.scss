@@ -4,24 +4,31 @@ $shadow-default: 0 1px 5px rgba(104, 104, 104, 0.8);
 
 $breakpoints: (
   desktop: 960px,
+  pad: 760px,
   mobile: 568px,
 );
 
-@mixin for-desktop {
+@mixin for-desktop() {
   @media screen and (min-width: map-get($breakpoints, 'desktop')) {
     @content;
   }
 }
 
-@mixin for-mobile {
+@mixin for-pad() {
+  @media screen and (min-width: map-get($breakpoints, 'pad')) and (max-width: map-get($breakpoints, 'desktop') - 1) {
+    @content;
+  }
+}
+
+@mixin for-mobile() {
   @media screen and (max-width: map-get($breakpoints, 'mobile')) {
     @content;
   }
 }
 
-@mixin btn-hamburger($width, $height: $width,$color) {
+@mixin btn-hamburger($width, $height: $width, $color) {
   $weight: 2px;
-  $spacing: ($height - $weight * 3) / 2.75 ;
+  $spacing: ($height - $weight * 3) / 2.75;
   width: $width;
   height: $weight;
   cursor: pointer;

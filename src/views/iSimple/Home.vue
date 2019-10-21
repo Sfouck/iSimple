@@ -1,10 +1,14 @@
 <template>
   <section class="page__home">
-    <i-cover :background-url="cover_background">
+    <i-cover :background-url="cover_background" height="90vh">
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
-          愛<span>x</span>簡單<span>x</span>水林
+          愛
+          <span class="orangered">x</span>
+          簡單
+          <span class="orangered">x</span>
+          水林
         </h1>
       </template>
     </i-cover>
@@ -13,7 +17,8 @@
 
     <article class="news">
       <hgroup>
-        <h1>NEWS</h1>
+        <h1>電子報</h1>
+        <!-- <h1>NEWS</h1> -->
         <!-- <h2>最新消息-副標題</h2> -->
       </hgroup>
       <section>
@@ -46,22 +51,6 @@
         </i-video-card>
       </section>
     </article>
-
-    <!-- <section class="subscription">
-      <h1>訂閱電子報</h1>
-      <button id="show-modal" @click="showModal = true">Show Modal</button>
-      <h3>
-        分享生活故事、社區活動和優惠訊息給每一位朋友<br />
-        請在下方輸入您的Email後就會收到我們的電子報嘍
-      </h3>
-      <form action="" method="post">
-        <div class="input-box">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" maxlength="200" />
-        </div>
-        <input type="submit" value="送出" />
-      </form>
-    </section> -->
 
     <i-modal v-if="showModal" @close="showModal = false">
       <!-- <template #header> </template> -->
@@ -97,7 +86,7 @@ export default {
     return {
       cover_background: '/cover/cover-home.jpg',
       showModal: false,
-      news_list: details_data,
+      news_list: details_data.slice(0, 3),
       current_video: 'hgVtUkRf_Cc',
       video_list: [
         {
@@ -142,13 +131,13 @@ export default {
 $home__article-padding: 1.5rem;
 
 .page__home {
-  // > article {
-  //   > hgroup {
-  //     text-align: center;
-  //     padding: $home__article-padding 0;
-  //   }
-  // }
   overflow: hidden;
+  @include for-mobile {
+    > article {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .news {
@@ -177,12 +166,18 @@ $home__article-padding: 1.5rem;
     }
   }
 
-  section {
+  > section {
     position: relative;
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
+  }
+
+  @include for-mobile {
+    > section {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
   }
 }
 
@@ -244,19 +239,33 @@ $home__article-padding: 1.5rem;
       font-size: inherit;
     }
   }
+
+  @include for-mobile {
+    &__sentence {
+      > h1 {
+        display: inline-block;
+        &::before {
+          top: -10%;
+          right: 95%;
+        }
+        &::after {
+          left: 95%;
+          bottom: -35%;
+        }
+      }
+    }
+  }
 }
 
 .video {
-  // margin: 0 auto;
-  // width: 90%;
   background-color: lighten(#e4f3ee, 5);
   padding: 1rem;
   h1 {
-    width: fit-content;
+    // width: fit-content;
     margin: 0 auto;
     padding-bottom: 2rem;
     font-size: 3em;
-    //display: table;  //for ie browser support
+    display: table; //for ie browser support
     &::after {
       content: '';
       background-color: black;
@@ -271,45 +280,8 @@ $home__article-padding: 1.5rem;
     margin: 0 auto;
     display: grid;
     grid-gap: 2rem;
-    // // grid-template-columns: repeat(3, minmax(250px, 1fr));
-    // grid-auto-columns: 1fr;
-    // grid-auto-rows: 1fr;
   }
-}
-
-@media screen and (max-width: 1023.98px) {
-  .page__home {
-    article {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .news {
-    > section {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-  }
-
-  .quote {
-    &__sentence {
-      > h1 {
-        display: inline-block;
-        &::before {
-          top: -10%;
-          /* left: -20%; */
-          right: 95%;
-        }
-        &::after {
-          // left: 90%;
-          // bottom: -2rem;
-          left: 95%;
-          bottom: -35%;
-        }
-      }
-    }
-  }
-
-  .video {
+  @include for-mobile {
     > section {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
