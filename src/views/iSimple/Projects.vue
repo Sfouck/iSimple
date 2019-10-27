@@ -3,17 +3,9 @@
     <i-cover class="projects__cover" :background-url="cover_image">
       <template #title>
         <h1>
-          <!-- 木作 -->
           過往水林
         </h1>
       </template>
-      <!-- <section>
-        <p>
-          木工手作的靈感來自生活中不同接觸和體悟。<br />
-          手作的本質呈現的是一種單純且令人感動的痕跡,同時靜靜地勾勒出簡約的線條,體現木頭樸質的紋路以及沉穩的呼吸與溫潤的質性。
-          每一件獨特作品都隱含著「適材適所」的哲思。
-        </p>
-      </section> -->
     </i-cover>
 
     <section
@@ -70,8 +62,8 @@ export default {
       },
       cover_image: '/cover/cover-video.jpg',
       video_list: [
-        { vid: '1DXUWTUX4gU', vtitle: '水林小陳' },
-        { vid: 'eMrPsnlhLtk', vtitle: '五木工坊' },
+        { vid: '3HETAzb_bwE', vtitle: '水賊林-蔡德黃', created: '2019-10-13' },
+        { vid: 'HoVayGW_Dtc', vtitle: '五木工坊', created: '2019-10-13' },
         // {
         //   vid: 'Ff5Bu0Gi2b4',
         //   vtitle: 'Hong Kong Island Drone Tour',

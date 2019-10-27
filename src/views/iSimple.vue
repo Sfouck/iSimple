@@ -31,7 +31,9 @@
       @close="subscription_show = false"
     ></i-subscription-modal>
 
-    <a class="modal-btn" @click="toggleSubscriptionModal"></a>
+    <a class="modal-btn subscription-modal" @click="toggleSubscriptionModal">
+      <font-awesome-icon :icon="['far', 'envelope']" />
+    </a>
 
     <!-- 頁尾 -->
     <footer>
@@ -173,33 +175,18 @@ section {
   cursor: pointer;
   transition: 0.6s;
   position: fixed;
-  top: 1px;
-  left: 10%;
+  top: 15%;
+  left: 5%;
   z-index: 9999;
 
   border: 2px solid #6d6c6c;
   border-radius: 100%;
-  &::before,
-  &::after {
-    content: '';
-    width: 70%;
-    height: 3px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    background-color: #6d6c6c;
-  }
-  &::before {
-    transform: rotate(45deg);
-  }
-  &::after {
-    transform: rotate(-45deg);
-  }
-  &:hover {
-    transform: rotate(180deg);
+  > svg {
+    margin: 0 auto;
+    display: table;
+    height: 100%;
+    font-size: 2.3rem;
+    color: #6d6c6c;
   }
 }
 
