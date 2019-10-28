@@ -23,7 +23,7 @@
           </a>
           <h2>
             {{ video.vtitle }}
-            <small>{{ video.vid }}</small>
+            <small>{{ video.created }}</small>
           </h2>
         </div>
       </div>

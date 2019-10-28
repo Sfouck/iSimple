@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <!-- <app-menu></app-menu> -->
     <router-view id="app__view" />
   </div>
 </template>
 
 <script>
-// import AppMenu from '@/components/AppMenu'
 export default {
   name: 'app',
-  // components: { AppMenu },
 }
 </script>
 
 <style lang="scss">
-// @import './style/reset.css';
 @import './style/normalize.css';
 #app {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,

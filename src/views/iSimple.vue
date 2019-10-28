@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <!-- 導覽列 -->
-    <header>
+    <header ref="app_header">
       <div class="logo-box">
         <router-link :to="{ name: 'home', path: '/' }">
           <img
@@ -20,7 +20,13 @@
 
     <!-- 主區塊 -->
     <main>
-      <transition name="fade" mode="out-in" @beforeEnter="beforeEnter" appear>
+      <transition
+        name="fade"
+        mode="out-in"
+        @beforeEnter="beforeEnter"
+        @afterEnter="afterEnter"
+        appear
+      >
         <!-- <keep-alive><router-view> </router-view></keep-alive> -->
         <router-view> </router-view>
       </transition>
@@ -31,7 +37,11 @@
       @close="subscription_show = false"
     ></i-subscription-modal>
 
-    <a class="modal-btn subscription-modal" @click="toggleSubscriptionModal">
+    <a
+      ref="subscription_modal"
+      class="modal-btn subscription-modal"
+      @click="toggleSubscriptionModal"
+    >
       <font-awesome-icon :icon="['far', 'envelope']" />
     </a>
 
@@ -45,20 +55,33 @@
 </template>
 
 <script>
+import iNavMenu from '@/components/iSimple/NavMenu.vue'
 import iSubscriptionModal from '@/components/iSimple/SubscriptionModal.vue'
 import links_iSimple from '@/assets/js/links.js'
 export default {
   name: 'isimple',
+  created() {
+    window.addEventListener('scroll', this.onScrollPage, true)
+  },
+  mounted() {
+    this.calcContentSectionHeight()
+    this.$refs.subscription_modal.classList.add('subscription-modal--on-cover')
+  },
   data() {
     return {
       nav_links: links_iSimple,
       nav_show: false,
       subscription_show: false,
+      scrollPageNumber: 0,
+      contentSectionHeight: 0,
     }
   },
   methods: {
     beforeEnter() {
       this.$root.$emit('scrollBeforeEnter')
+    },
+    afterEnter() {
+      this.calcContentSectionHeight()
     },
     toggleMenu() {
       this.nav_show = !this.nav_show
@@ -66,9 +89,35 @@ export default {
     toggleSubscriptionModal() {
       this.subscription_show = !this.subscription_show
     },
+    onScrollPage() {
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
+      this.scrollPageNumber = Math.floor(scrollTop / this.contentSectionHeight)
+    },
+    calcContentSectionHeight() {
+      let h = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0
+      )
+      this.contentSectionHeight =
+        Math.floor(h * 0.8) - this.$refs.app_header.offsetHeight
+    },
+  },
+  watch: {
+    scrollPageNumber(newNum) {
+      const subModal = this.$refs.subscription_modal
+      if (newNum === 0) {
+        subModal.classList.add('subscription-modal--on-cover')
+      } else {
+        subModal.classList.remove('subscription-modal--on-cover')
+      }
+    },
   },
   components: {
     'i-subscription-modal': iSubscriptionModal,
+    'nav-menu': iNavMenu,
   },
 }
 </script>
@@ -88,11 +137,20 @@ img {
   height: auto;
 }
 
+section {
+  .box {
+    background: $color-light;
+    border: $color-dark solid 2px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: $shadow-default;
+  }
+}
+
 .wrapper {
   > header {
     $header-min-height: 70px;
     box-shadow: $shadow-default;
-    // background-color: $color-light;
     background-color: white;
     position: sticky;
     top: 0;
@@ -129,16 +187,6 @@ img {
   }
 }
 
-section {
-  .box {
-    background: $color-light;
-    border: $color-dark solid 2px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: $shadow-default;
-  }
-}
-
 .logo-box {
   z-index: inherit;
   grid-column: 3 / 4;
@@ -169,24 +217,35 @@ section {
   }
 }
 
-.modal-btn {
+.subscription-modal {
+  $color-sub_modal-dark: #6d6c6c;
+  $color-sub_modal-light: lighten(#6d6c6c, 50);
   width: 64px;
   height: 64px;
   cursor: pointer;
-  transition: 0.6s;
+  transition: 0.3s;
   position: fixed;
   top: 15%;
   left: 5%;
-  z-index: 9999;
+  z-index: 9998;
 
-  border: 2px solid #6d6c6c;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color-sub_modal-dark;
   border-radius: 100%;
   > svg {
     margin: 0 auto;
     display: table;
     height: 100%;
     font-size: 2.3rem;
-    color: #6d6c6c;
+    color: $color-sub_modal-dark;
+  }
+
+  &--on-cover {
+    border-color: $color-sub_modal-light;
+    > svg {
+      color: $color-sub_modal-light;
+    }
   }
 }
 

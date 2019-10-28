@@ -2,7 +2,6 @@
   <div class="video-card" ref="videoCard">
     <div class="video-card__thumb">
       <slot name="thumbnail">
-        <!-- <img :src="thumbnailURL" alt="video-card__thumb" /> -->
         <img :src="img" alt="video-card__thumb" />
       </slot>
     </div>
@@ -47,7 +46,6 @@ export default {
   },
   methods: {
     openVideo: function() {
-      // console.log(this.videoid)
       this.$emit('open', this.videoid)
     },
   },
@@ -99,10 +97,8 @@ $color-link-background: darken(#cce5c7, 13);
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: $describe_max-line; /* number of lines to show */
-        // line-height: X; /* fallback */
-        // max-height: $area_line-height * $describe_max-line; /* fallback */
-        height: $area_line-height * $describe_max-line; /* fallback */
+        -webkit-line-clamp: $describe_max-line;
+        height: $area_line-height * $describe_max-line;
       }
     }
     .tag-area {
@@ -231,13 +227,9 @@ $color-link-background: darken(#cce5c7, 13);
         }
         &__description {
           font-size: $area_line-height * 0.8;
-          // $describe_max-line: 3;
-          -webkit-line-clamp: initial; /* number of lines to show */
-          // height: $area_line-height * $describe_max-line; /* fallback */
+          -webkit-line-clamp: initial;
           height: auto;
           color: #cde8df;
-          // font-weight: bold;
-          // text-shadow: 1px 1px 3px $color-dark;
         }
       }
     }

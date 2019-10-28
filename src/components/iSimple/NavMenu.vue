@@ -14,11 +14,6 @@
 export default {
   name: 'NavMenu',
   props: ['links', 'open'],
-  // data() {
-  //   return {
-  //     routeToHome: { name: 'home', path: '/' },
-  //   }
-  // },
   watch: {
     open(isOpen) {
       let menu = this.$refs.navMenu
@@ -67,20 +62,4 @@ nav {
     }
   }
 }
-
-// @media screen and (max-width: 768px) {
-//   // nav {
-//   //   min-height: 50px;
-//   // }
-
-//   .nav-menu {
-//     flex-flow: column wrap;
-//     background-color: lighten($color-light, 1);
-//     transition: all 0.3s;
-//     transform: translateY(-100%);
-//     &--opened {
-//       transform: translateY(0%);
-//     }
-//   }
-// }
 </style>

@@ -1,21 +1,13 @@
-import ISliderComponent from './Slider.vue'
-import IInfoComponent from './Info.vue'
 import ICoverComponent from './Cover.vue'
 import IModalComponent from './Modal.vue'
 import INavMenuComponent from './NavMenu.vue'
-import IBreadcrumbComponent from './Breadcrumb.vue'
 
 /// TODO: code refactoring
 
-// const VueISimple = {}
-
 const VueISimple_ComponentList = [
-  ISliderComponent,
-  IInfoComponent,
   ICoverComponent,
   IModalComponent,
   INavMenuComponent,
-  IBreadcrumbComponent,
 ]
 
 const install = function(Vue, globalOptions) {
@@ -27,15 +19,10 @@ const install = function(Vue, globalOptions) {
   }
 }
 
-// Object.assign(VueISimple, { install })
-
 export default install
 export {
-  ISliderComponent,
-  IInfoComponent,
-  ICoverComponent,
-  IModalComponent,
-  INavMenuComponent,
-  IBreadcrumbComponent,
+  ICoverComponent as iCover,
+  IModalComponent as iModal,
+  INavMenuComponent as iNavMenu,
   install,
 }

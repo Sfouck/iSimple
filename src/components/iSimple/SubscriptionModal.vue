@@ -52,7 +52,7 @@
             </template>
           </div>
         </div>
-        <a class="modal-btn-close" @click="$emit('close')"></a>
+        <a class="modal-btn-close" @click="onButtonCloseClick"></a>
         <!-- <a class="modal-btn-close" @click="onButtonCloseClick"></a> -->
       </div>
     </div>
@@ -70,22 +70,17 @@ export default {
   },
   methods: {
     onModalMaskClick(e) {
-      // console.log('test', e)
-      // console.log(e.target.getAttribute('name'))
       let target_name = e.target.getAttribute('name')
       if (target_name === 'modal-mask') {
-        this.$emit('close')
+        this.closeSubScribeModal()
       }
     },
-    onEmailFormSubmitClick(e) {
-      console.log('onEmailFormSubmitClick', e)
+    onEmailFormSubmitClick() {
       if (this.validEmail(this.sub_email)) {
-        console.log(this.sub_email)
         this.sub_result = 'success'
         this.$refs.inputView.classList.add('input-view--submitted')
         this.$refs.resultView.classList.add('result-view--submitted')
       } else {
-        console.log('請輸入email')
         this.sub_result = 'failed'
       }
     },
@@ -93,9 +88,12 @@ export default {
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.exec(email) !== null
     },
-    // onButtonCloseClick(e) {
-    //   console.log('onButtonCloseClick', e)
-    // },
+    onButtonCloseClick() {
+      this.closeSubScribeModal()
+    },
+    closeSubScribeModal() {
+      this.$emit('close')
+    },
   },
 }
 </script>
@@ -104,7 +102,7 @@ export default {
 $modal-font-color: #6d6c6c;
 .modal-mask {
   position: fixed;
-  z-index: 9998;
+  z-index: 9999;
   top: 0;
   right: 0;
   width: 100%;
@@ -113,7 +111,7 @@ $modal-font-color: #6d6c6c;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  // transform-origin: center;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal-wrapper {
@@ -127,20 +125,19 @@ $modal-font-color: #6d6c6c;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  @include for-mobile {
+    width: 90vw;
+    height: 90vw;
+  }
 }
 
 .modal-container {
-  // display: table;
-  // margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 40vh);
   grid-auto-rows: 1fr;
   position: absolute;
   text-shadow: 0px 0px 1px lighten($modal-font-color, 20);
   color: $modal-font-color;
-  // > div {
-  //   transition: all 0.3s ease;
-  // }
 }
 
 .input-view {
@@ -194,7 +191,6 @@ $modal-font-color: #6d6c6c;
       }
     }
     .input-box {
-      // font-size: 1.5em;
       &__label {
         display: block;
 
@@ -239,19 +235,9 @@ $modal-font-color: #6d6c6c;
   }
 }
 
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
-  // transform: scaleY(0);
 }
 
 .modal-enter-to,
@@ -268,7 +254,7 @@ $modal-font-color: #6d6c6c;
   width: 64px;
   height: 64px;
   cursor: pointer;
-  transition: 0.6s;
+  transition: all 0.6s ease;
   position: absolute;
   top: 10%;
   left: 80%;

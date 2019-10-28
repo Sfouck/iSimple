@@ -6,7 +6,6 @@
           最新消息
         </h1>
       </template>
-      <!-- <section>from 水林鄉公所</section> -->
     </i-cover>
     <section class="epaper">
       <table>
@@ -18,8 +17,6 @@
               :class="{ active: sortKey == col.key }"
             >
               {{ col.title | capitalize }}
-              <!-- <span class="arrow" :class="sortOrder[key] > 0 ? 'asc' : 'dsc'">
-              </span> -->
             </th>
             <th>連結</th>
           </tr>
@@ -48,8 +45,6 @@ export default {
     let columns = [
       { title: '公告標題', key: 'title' },
       { title: '日期', key: 'date' },
-      // { title: '連結', key: 'url' },
-      // '預覽',
     ]
     columns.forEach(function(key) {
       sortOrders[key] = 1

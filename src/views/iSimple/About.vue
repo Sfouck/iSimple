@@ -58,7 +58,6 @@ export default {
 
 $area_line-height: 1.2rem;
 $color-font: darken(#cde8df, 30);
-// $color-link-background: darken(#cce5c7, 13);
 .about-card {
   min-width: 200px;
 
@@ -87,16 +86,7 @@ $color-font: darken(#cde8df, 30);
       // white-space: nowrap;
     }
     &__shop-data {
-      // $describe_max-line: 3;
       line-height: $area_line-height * 1.2;
-      // overflow: hidden;
-      // text-overflow: ellipsis;
-      // display: -webkit-box;
-      // -webkit-box-orient: vertical;
-      // -webkit-line-clamp: $describe_max-line; /* number of lines to show */
-      // // line-height: X; /* fallback */
-      // // max-height: $area_line-height * $describe_max-line; /* fallback */
-      // height: $area_line-height * $describe_max-line; /* fallback */
     }
   }
 }

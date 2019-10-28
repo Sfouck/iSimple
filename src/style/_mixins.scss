@@ -1,0 +1,44 @@
+
+@mixin for-desktop() {
+  @media screen and (min-width: map-get($breakpoints, 'desktop')) {
+    @content;
+  }
+}
+
+@mixin for-pad() {
+  @media screen and (min-width: map-get($breakpoints, 'pad')) and (max-width: map-get($breakpoints, 'desktop') - 1) {
+    @content;
+  }
+}
+
+@mixin for-mobile() {
+  @media screen and (max-width: map-get($breakpoints, 'mobile')) {
+    @content;
+  }
+}
+
+@mixin btn-hamburger($width, $height: $width, $color) {
+  $weight: 2px;
+  $spacing: ($height - $weight * 3) / 2.75;
+  width: $width;
+  height: $weight;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background-color: $color;
+  position: absolute;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: $width;
+    height: $weight;
+    background: inherit;
+  }
+  &::after {
+    top: $spacing;
+  }
+  &::before {
+    top: $spacing * -1;
+  }
+}

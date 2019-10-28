@@ -25,9 +25,6 @@
 
           <a class="modal-btn-close" @click="$emit('close')"></a>
         </div>
-        <!-- <div class="modal-btn-container"> -->
-        <!-- <a class="modal-btn-close" @click="$emit('close')"></a> -->
-        <!-- </div> -->
       </div>
     </div>
   </transition>
@@ -48,47 +45,21 @@ export default {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  // text-align: center;
-  // display: table;
-  // padding-top: 20%;
-  // position: relative;
   transform-origin: center top;
-  // transition: opacity 0.3s ease;
 }
 
 .modal-wrapper {
-  // display: table-cell;
-  // vertical-align: middle;
-  // position: relative;
-  // position: absolute;
-  // transform: translate(0, 50%);
   height: 100%;
-  // top: 50%;
-  // left: 50%;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  // height: 100%;
-  // transform: scaleY(50%);
-  // width: 100%;
 }
 
 .modal-container {
-  // width: 300px;
   max-width: 960px;
   width: 60%;
   position: relative;
-  // height: 100%;
-  // overflow: hidden;
-  // margin: 0px auto;
-  // padding: 20px 30px;
-  // background-color: #fff;
-  // border-radius: 2px;
-  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  // transform-origin: 100% 0;
-  // transition: all 1s ease;
-  // font-family: Helvetica, Arial, sans-serif;
 }
 
 .modal-header h3 {
@@ -97,12 +68,7 @@ export default {
 }
 
 .modal-body {
-  // margin: 20px 0;
   width: 100%;
-  // height: 100%;
-  // padding-bottom: 56.25%; //16:9
-  // position: relative;
-  // height: 0;
 }
 
 /*
@@ -117,61 +83,24 @@ export default {
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
-  // -webkit-transform: scale(1.1);
-  // transform: scale(1.1);
   transform: scaleY(0);
 }
 
 .modal-enter-to,
 .modal-leave {
   opacity: 1;
-  // -webkit-transform: scaleY(1);
-  // transform: scaleY(1);
 }
 
 .modal-enter-active,
 .modal-leave-active {
-  // transition-delay: 1s;
   transition: all 0.6s ease-in-out;
-  // opacity: 0;
 }
 
-// .modal-enter .modal-container,
-// .modal-leave-to .modal-container {
-//   // -webkit-transform: scale(1.1);
-//   // transform: scale(1.1);
-//   // transform: scaleY(1);
-//   // transform-origin: center center;
-//   // transition: all 1.6s ease;
-// }
-
-// .modal-enter-active .modal-container,
-// .modal-leave-active .modal-container {
-//   // -webkit-transform: scale(1.1);
-//   // transform: scale(1.1);
-//   // transition: all 1.6s ease;/
-//   // transform-origin: center center;
-//   // opacity: 0;
-// }
-
-/*
-  modal button for close
-*/
-
-// .modal-btn-container {
-//   width: 64px;
-//   height: 64px;
-//   position: relative;
-// }
-
 .modal-btn-close {
-  // width: 100%;
-  // height: 100%;
   width: 64px;
   height: 64px;
   cursor: pointer;
   transition: 0.6s;
-  // position: relative;
   position: absolute;
   top: 0;
   left: 100%;
@@ -200,12 +129,6 @@ export default {
 }
 
 @media screen and (max-width: 1023.97px) {
-  // .modal-wrapper {
-  //   width: 100%;
-  //   position: absolute;
-  //   transform: translate(0, -50%);
-  //   top: 50%;
-  // }
   .modal-container {
     width: 100%;
   }

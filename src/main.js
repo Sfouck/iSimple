@@ -2,8 +2,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-// import Swiper from './components/Swiper'
-import iSimple from './components/iSimple'
+import { iCover } from './components/iSimple'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons'
@@ -13,9 +12,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-// Vue.use(Swiper)
 window.history.scrollRestoration = 'manual'
-Vue.use(iSimple)
+// Vue.use(iSimple)
+Vue.component('i-cover', iCover)
 
 library.add(farEnvelope)
 library.add(fasCheck)
