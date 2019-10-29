@@ -32,7 +32,7 @@
 import about_data from '@/assets/js/about_data.js'
 export default {
   data() {
-    console.log(about_data)
+    // console.log(about_data)
     return {
       cover_image: 'cover/cover-about.jpg',
       shop_list: about_data,
