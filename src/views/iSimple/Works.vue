@@ -7,7 +7,7 @@
         </h1>
       </template>
     </i-cover>
-    <section class="epaper">
+    <section class="works">
       <table>
         <thead>
           <tr>
@@ -33,7 +33,7 @@
         </tbody>
       </table>
     </section>
-    <section class="epaper-ref">公告資訊 from 水林鄉公所</section>
+    <section class="works-ref">公告資訊 from 水林鄉公所</section>
   </section>
 </template>
 
@@ -102,7 +102,7 @@ export default {
 </script>
 
 <style lang="scss">
-.epaper {
+.works {
   padding: 0 10%;
 
   > table {
@@ -137,7 +137,7 @@ export default {
   }
 }
 
-.epaper-ref {
+.works-ref {
   width: 80%;
   padding-top: 2rem;
   text-align: right;

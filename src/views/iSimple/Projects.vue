@@ -64,16 +64,6 @@ export default {
       video_list: [
         { vid: '3HETAzb_bwE', vtitle: '水賊林-蔡德黃', created: '2019-10-13' },
         { vid: 'HoVayGW_Dtc', vtitle: '五木工坊', created: '2019-10-13' },
-        // {
-        //   vid: 'Ff5Bu0Gi2b4',
-        //   vtitle: 'Hong Kong Island Drone Tour',
-        // },
-        // { vid: 'Fz5s1ZSZusY', vtitle: 'City of Singapore - 2018' },
-        // { vid: '1Ezccc5O5Pc', vtitle: 'Top 5 Dubai Mega Projects' },
-        // {
-        //   vid: 'LhdkD6CY9HE',
-        //   vtitle: 'Hotel Dubai Hotel Atlantis The Palm Dubai booking',
-        // },
       ],
       current_video: '',
     }
