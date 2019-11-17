@@ -43,14 +43,14 @@ export default {
   data() {
     let sortOrders = {}
     let columns = [
-      { title: '公告標題', key: 'title' },
+      { title: '標題', key: 'title' },
       { title: '日期', key: 'date' },
     ]
     columns.forEach(function(key) {
       sortOrders[key] = 1
     })
     return {
-      cover_image: 'cover/cover-works.jpg',
+      cover_image: 'cover/page/works.jpg',
       epaper_table: {
         columns: columns,
         filiterKey: '',

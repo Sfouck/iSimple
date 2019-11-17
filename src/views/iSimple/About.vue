@@ -34,7 +34,7 @@ export default {
   data() {
     // console.log(about_data)
     return {
-      cover_image: 'cover/cover-about.jpg',
+      cover_image: 'cover/page/about.jpg',
       shop_list: about_data,
     }
   },
@@ -57,7 +57,6 @@ export default {
 }
 
 $area_line-height: 1.2rem;
-$color-font: darken(#cde8df, 30);
 .about-card {
   min-width: 200px;
 
@@ -79,7 +78,7 @@ $color-font: darken(#cde8df, 30);
       letter-spacing: 2px;
     }
     &__shop-name {
-      color: $color-font;
+      color: $color-primary;
       text-overflow: ellipsis;
       font-size: $area_line-height;
       line-height: $area_line-height * 1.5;

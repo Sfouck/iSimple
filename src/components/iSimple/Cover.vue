@@ -20,7 +20,7 @@ export default {
   props: {
     'background-url': {
       type: String,
-      default: '/blogging-coding-copywriting-34140.jpg',
+      default: '/cover/page/home.jpg',
     },
     height: {
       type: String,

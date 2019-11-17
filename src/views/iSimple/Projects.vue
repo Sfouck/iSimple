@@ -60,7 +60,7 @@ export default {
         hasShow: false,
         isShowing: false,
       },
-      cover_image: '/cover/cover-video.jpg',
+      cover_image: '/cover/page/video.jpg',
       video_list: [
         { vid: '3HETAzb_bwE', vtitle: '水賊林-蔡德黃', created: '2019-10-13' },
         { vid: 'HoVayGW_Dtc', vtitle: '五木工坊', created: '2019-10-13' },

@@ -79,7 +79,7 @@ $area_line-height: 1.2rem;
         letter-spacing: 2px;
       }
       &__title {
-        color: darken(red, 10);
+        color: darken($color-primary, 10);
         text-overflow: ellipsis;
         font-size: $area_line-height;
         white-space: nowrap;
@@ -97,43 +97,7 @@ $area_line-height: 1.2rem;
       }
     }
     .tag-area {
-      display: flex;
-      flex-flow: row wrap;
-      > a {
-        position: relative;
-        cursor: pointer;
-        z-index: 0;
-        font-size: 0.8rem;
-        font-weight: bold;
-        line-height: $area_line-height;
-        height: $area_line-height;
-        overflow: hidden;
-        margin: 0.5rem 0.5rem 0 0;
-        padding: 0 6px;
-        text-decoration: none;
-        letter-spacing: 1px;
-        color: $color-dark;
-        &::before {
-          content: '';
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          right: 0;
-          background: rgb(219, 219, 219);
-          z-index: -1;
-        }
-        &::after {
-          content: '';
-          width: 0;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          background: darken(red, 10);
-          z-index: -1;
-        }
-      }
+      @include tag-group();
     }
   }
 
@@ -146,7 +110,7 @@ $area_line-height: 1.2rem;
       padding: 0 1rem;
       border-width: 0 1px 1px;
       border-style: solid;
-      border-color: darkred;
+      border-color: darken($color-primary, 20);
       text-decoration: none;
       text-align: center;
       transition: 0.4s;
@@ -163,38 +127,16 @@ $area_line-height: 1.2rem;
         height: 0;
         border-width: 6px 0 6px 10px;
         border-style: solid;
-        border-color: transparent #bf272d;
+        border-color: transparent $color-primary;
         display: inline-block;
         vertical-align: middle;
         margin: 0 0 0 8px;
         transition: 0.4s;
       }
     }
-  }
-}
-
-@media screen and (min-width: 1023.98px) {
-  .card {
-    &__content {
-      .tag-area {
-        height: ($area_line-height + 0.5rem) * 2;
-        > a:hover {
-          color: white;
-          transition: all 0s ease 0.1s;
-          &::before {
-            width: 0;
-            transition: 0.3s;
-          }
-          &::after {
-            width: 100%;
-            transition: 0.3s 0.3s;
-          }
-        }
-      }
-    }
-    &__link-box {
+    @include for-desktop() {
       > a:hover {
-        background: #bf272d;
+        background: $color-primary;
         > p {
           color: $color-light;
         }

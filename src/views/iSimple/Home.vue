@@ -18,8 +18,6 @@
     <article class="news">
       <hgroup>
         <h1>電子報</h1>
-        <!-- <h1>NEWS</h1> -->
-        <!-- <h2>最新消息-副標題</h2> -->
       </hgroup>
       <section>
         <i-card v-for="(news, index) in news_list" v-bind="news" :key="index">
@@ -38,7 +36,6 @@
     <article class="video">
       <hgroup>
         <h1>VIDEO</h1>
-        <!-- <h2>了解本地的風光情景</h2> -->
       </hgroup>
       <section>
         <i-video-card
@@ -53,7 +50,6 @@
     </article>
 
     <i-modal v-if="showModal" @close="showModal = false">
-      <!-- <template #header> </template> -->
       <template #body>
         <div class="video-wrapper">
           <iframe
@@ -67,7 +63,6 @@
           ></iframe>
         </div>
       </template>
-      <!-- <template #footer> </template> -->
     </i-modal>
   </section>
 </template>
@@ -81,17 +76,17 @@ export default {
   data() {
     for (let detail of details_data) {
       detail.link = `/detail/${detail.id}`
-      detail.img = `/img/${detail.cover_img}`
+      detail.img = `/img/detail/${detail.img_folder}/cover.jpg`
     }
     return {
-      cover_background: '/cover/cover-home.jpg',
+      cover_background: '/cover/page/home.jpg',
       showModal: false,
       news_list: details_data.slice(0, 3),
       current_video: 'hgVtUkRf_Cc',
       video_list: [
         {
           title: '水賊林',
-          img: '/img/detail/tsai_cover.jpg',
+          img: '/img/cover/video/tsai.jpg',
           description:
             '蔡得黃，綽號：菜刀。雖是農家子弟，但沒有任何務農經驗。曾任職傳播事業的他，2010年返鄉回到水林展開土地耕種。',
           tags: ['水賊林'],
@@ -99,7 +94,7 @@ export default {
         },
         {
           title: '五木工坊',
-          img: '/img/detail/woodwork_cover.jpg',
+          img: '/img/cover/video/woodwork.jpg',
           description:
             '不惑之年的楊詔期先生,從事木工產業已逾 16 年。逐漸地體會到土木工程並非自己的志業,在 2008 年毅然決然地回到水林老家。',
           tags: ['五木工坊'],

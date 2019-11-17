@@ -27,10 +27,10 @@ export default {
   data() {
     for (let detail of details_data) {
       detail.link = `/detail/${detail.id}`
-      detail.img = `/img/${detail.cover_img}`
+      detail.img = `/img/detail/${detail.img_folder}/cover.jpg`
     }
     return {
-      cover_image: 'cover/cover-epaper.jpg',
+      cover_image: 'cover/page/epaper.jpg',
       epaper_list: details_data,
     }
   },
@@ -84,8 +84,11 @@ export default {
     position: relative;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
+    @include for-desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 </style>
