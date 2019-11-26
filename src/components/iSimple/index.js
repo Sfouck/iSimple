@@ -1,6 +1,7 @@
 import ICoverComponent from './Cover.vue'
 import IModalComponent from './Modal.vue'
 import INavMenuComponent from './NavMenu.vue'
+import ICardComponent from './Card.vue'
 
 /// TODO: code refactoring
 
@@ -8,6 +9,7 @@ const VueISimple_ComponentList = [
   ICoverComponent,
   IModalComponent,
   INavMenuComponent,
+  ICardComponent,
 ]
 
 const install = function(Vue, globalOptions) {
@@ -24,5 +26,6 @@ export {
   ICoverComponent as iCover,
   IModalComponent as iModal,
   INavMenuComponent as iNavMenu,
+  ICardComponent as iCard,
   install,
 }

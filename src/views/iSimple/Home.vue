@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import iCard from '@/components/iSimple/Card.vue'
+import { iCard, iModal } from '@/components/iSimple'
 import iVideoCard from '@/components/iSimple/VideoCard.vue'
 import details_data from '@/assets/js/details_data.js'
 export default {
@@ -85,11 +85,11 @@ export default {
       current_video: 'hgVtUkRf_Cc',
       video_list: [
         {
-          title: '水賊林',
+          title: '水林小陳',
           img: '/img/cover/video/tsai.jpg',
           description:
-            '蔡得黃，綽號：菜刀。雖是農家子弟，但沒有任何務農經驗。曾任職傳播事業的他，2010年返鄉回到水林展開土地耕種。',
-          tags: ['水賊林'],
+            '陳弘益畢業後即北上打拼，受到老闆賞識一路升至廠長。眼見務農雙親因年長行動不便，更驚覺兒時玩耍之小溪水溝中的青蛙、魚、蝦已不復見，遂於民國95年揮別廠長職務，舉家返鄉。',
+          tags: ['水林小陳'],
           videoid: '3HETAzb_bwE',
         },
         {
@@ -117,6 +117,7 @@ export default {
   },
   components: {
     'i-card': iCard,
+    'i-modal': iModal,
     'i-video-card': iVideoCard,
   },
 }

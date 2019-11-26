@@ -1,5 +1,5 @@
 <template>
-  <article class="app__projects">
+  <article class="page__projects">
     <i-cover class="projects__cover" :background-url="cover_image">
       <template #title>
         <h1>
@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { iModal } from '@/components/iSimple'
 export default {
   data() {
     return {
@@ -62,7 +63,7 @@ export default {
       },
       cover_image: '/cover/page/video.jpg',
       video_list: [
-        { vid: '3HETAzb_bwE', vtitle: '水賊林-蔡德黃', created: '2019-10-13' },
+        { vid: '3HETAzb_bwE', vtitle: '水林小陳', created: '2019-10-13' },
         { vid: 'HoVayGW_Dtc', vtitle: '五木工坊', created: '2019-10-13' },
       ],
       current_video: '',
@@ -86,51 +87,42 @@ export default {
   },
   mounted() {
     const cards = document.getElementsByClassName('card')
-    let vm = this
+    const vm = this
     for (let card of cards) {
-      // console.log(card)
-      card.addEventListener('click', function() {
-        // console.log(this)
-        vm.cardShowing(this)
+      card.addEventListener('click', () => {
+        vm.cardShowing(card)
       })
     }
   },
   methods: {
     cardShowing(e) {
-      // console.log(e)
-      let cardIsShowing = false,
-        cardHasShow = e.getAttribute('class').indexOf('show') > 0 ? true : false
-
-      if (cardHasShow) {
-        cardIsShowing = true
-      }
-
       if (this.cards.isShowing) {
+        // save this card's showing state
+        const thisCardwasShowing = e.classList.contains('show')
         // a card is already in view
-        document
-          .getElementsByClassName('card show')[0]
-          .setAttribute('class', 'card')
+        const showingCard = document.querySelector('.card.show')
+        showingCard.classList.remove('class', 'show')
 
-        if (cardIsShowing) {
+        if (thisCardwasShowing) {
           // this card was showing - reset the grid
           this.cards.isShowing = false
         } else {
           // this card isn't showing - get in with it
-          e.setAttribute('class', `${e.getAttribute('class')} show`)
+          e.classList.add('show')
         }
-
-        // zindex++
       } else {
         // no cards in view
         this.cards.isShowing = true
-        e.setAttribute('class', `${e.getAttribute('class')} show`)
+        e.classList.add('show')
       }
-      // console.log('test')
     },
     showVideo(id) {
       this.current_video = this.video_list[id]
       this.showModal = true
     },
+  },
+  components: {
+    'i-modal': iModal,
   },
 }
 </script>
@@ -149,49 +141,51 @@ export default {
   }
 }
 
-.projects__cover {
-  p,
-  h1 {
-    text-shadow: $shadow-default;
+.projects {
+  &__cover {
+    p,
+    h1 {
+      text-shadow: $shadow-default;
+    }
+    p {
+      font-weight: 600;
+    }
   }
-  p {
-    font-weight: 600;
+
+  &__video-grid {
+    padding: 2rem 3rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    .btn {
+      $color-button: teal;
+      background: $color-button;
+      border-radius: 4px;
+      box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.25);
+      color: white;
+      display: inline-block;
+      padding: 6px 30px 8px;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.1s 0s ease-out;
+      &:hover {
+        background: lighten($color-button, 2.5);
+        box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+        transform: translateY(-2px);
+        transition: all 0.25s 0s ease-out;
+      }
+      &:active {
+        background: darken($color-button, 2.5);
+        box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.25);
+        transform: translate3d(0, 1px, 0);
+        transition: all 0.025s 0s ease-out;
+      }
+    }
   }
 }
 
-.projects__video-grid {
-  padding: 2rem 3rem;
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: minmax(200px, auto);
-  .btn {
-    $color-button: teal;
-    background: $color-button;
-    border-radius: 4px;
-    box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.25);
-    color: white;
-    display: inline-block;
-    padding: 6px 30px 8px;
-    position: relative;
-    text-decoration: none;
-    transition: all 0.1s 0s ease-out;
-    &:hover {
-      background: lighten($color-button, 2.5);
-      box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
-      transform: translateY(-2px);
-      transition: all 0.25s 0s ease-out;
-    }
-    &:active {
-      background: darken($color-button, 2.5);
-      box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.25);
-      transform: translate3d(0, 1px, 0);
-      transition: all 0.025s 0s ease-out;
-    }
-  }
-}
-
-// TODO: maybe css refactoring is needed
+// TODO: css refactoring is needed
 
 .projects__video-grid .card {
   border: burlywood solid 2px;
@@ -204,6 +198,11 @@ export default {
   text-align: left;
   transition: all 0.3s 0s ease-in;
   z-index: 1;
+
+  @include for-mobile() {
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 
   &__title {
     background: white;
@@ -277,13 +276,6 @@ export default {
         transform: scale(0.92);
       }
     }
-  }
-}
-
-@media screen and (max-width: 767.97px) {
-  .projects__video-grid {
-    padding: 2rem 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 </style>

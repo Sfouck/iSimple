@@ -223,7 +223,7 @@ section {
   width: 64px;
   height: 64px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.15s;
   position: fixed;
   top: 15%;
   left: 5%;
