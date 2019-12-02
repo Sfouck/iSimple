@@ -1,6 +1,6 @@
 <template>
   <section class="page__home">
-    <i-cover :background-url="cover_background" height="90vh">
+    <i-cover :background-url="cover_background" height="93vh">
       <!-- # equals to v-slot -->
       <template #title>
         <h1>
@@ -68,8 +68,8 @@
 </template>
 
 <script>
-import { iCard, iModal } from '@/components/iSimple'
-import iVideoCard from '@/components/iSimple/VideoCard.vue'
+import { iCard, iModal } from '@/components'
+import iVideoCard from '@/components/VideoCard.vue'
 import details_data from '@/assets/js/details_data.js'
 export default {
   // name: 'isimple-home',
@@ -90,7 +90,7 @@ export default {
           description:
             '陳弘益畢業後即北上打拼，受到老闆賞識一路升至廠長。眼見務農雙親因年長行動不便，更驚覺兒時玩耍之小溪水溝中的青蛙、魚、蝦已不復見，遂於民國95年揮別廠長職務，舉家返鄉。',
           tags: ['水林小陳'],
-          videoid: '3HETAzb_bwE',
+          videoid: '1DXUWTUX4gU',
         },
         {
           title: '五木工坊',

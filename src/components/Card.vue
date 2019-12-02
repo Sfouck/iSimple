@@ -60,7 +60,7 @@ $area_line-height: 1.2rem;
       left: 50%;
       transform: translate(-50%, -50%);
       max-width: none;
-      height: 100%;
+      height: (100% * 1.2);
     }
   }
 

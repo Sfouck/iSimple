@@ -55,8 +55,8 @@
 </template>
 
 <script>
-import iNavMenu from '@/components/iSimple/NavMenu.vue'
-import iSubscriptionModal from '@/components/iSimple/SubscriptionModal.vue'
+import iNavMenu from '@/components/NavMenu.vue'
+import iSubscriptionModal from '@/components/SubscriptionModal.vue'
 import links_iSimple from '@/assets/js/links.js'
 export default {
   name: 'isimple',
@@ -150,20 +150,21 @@ section {
 .wrapper {
   > header {
     $header-min-height: 70px;
+    $header-height: 7vh;
     box-shadow: $shadow-default;
     background-color: white;
     position: sticky;
     top: 0;
 
-    height: 10vh;
-    min-height: $header-min-height;
+    height: $header-height;
+    // min-height: $header-min-height;
 
     display: grid;
-    grid-template-rows: minmax($header-min-height, 10vh) 1fr;
+    grid-template-rows: minmax($header-min-height, $header-height) 1fr;
     grid-template-columns: repeat(5, 1fr);
 
     @include for-mobile {
-      grid-template-rows: minmax(auto, 10vh) 50vh;
+      grid-template-rows: minmax(auto, $header-height) 50vh;
     }
 
     z-index: 1000;
@@ -189,6 +190,7 @@ section {
 
 .logo-box {
   z-index: inherit;
+  height: inherit;
   grid-column: 3 / 4;
 
   img {
@@ -200,20 +202,23 @@ section {
 
 .nav__option {
   $option-height: 50px;
+  $option-width: 8vw;
   display: none;
+  height: inherit;
   z-index: inherit;
   grid-column: 5 / 6;
   grid-row: 1 / 2;
+  cursor: pointer;
 
   @include for-mobile {
     display: flex;
-    min-height: $option-height;
+    min-height: inherit;
     align-items: center;
     justify-content: center;
   }
 
   .nav__hamburger {
-    @include btn-hamburger($option-height, $option-height, #000);
+    @include btn-hamburger($option-width, $option-width, #000, 3px);
   }
 }
 

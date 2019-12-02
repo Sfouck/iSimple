@@ -16,12 +16,11 @@
   }
 }
 
-@mixin btn-hamburger($width, $height: $width, $color) {
-  $weight: 2px;
-  $spacing: ($height - $weight * 3) / 2.75;
+@mixin btn-hamburger($width, $height: $width, $color,$weight: 2px) {
+  // $spacing: ($height - $weight * 3) / 2.75;
+  $spacing: $width / 3.3;
   width: $width;
   height: $weight;
-  cursor: pointer;
   transition: all 0.4s ease;
   background-color: $color;
   position: absolute;
@@ -30,7 +29,7 @@
     content: '';
     position: absolute;
     z-index: 1;
-    width: $width;
+    width: inherit;
     height: $weight;
     background: inherit;
   }

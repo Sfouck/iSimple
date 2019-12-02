@@ -86,7 +86,7 @@ $color-link-background: darken(#cce5c7, 13);
         letter-spacing: 2px;
       }
       &__title {
-        color: darken(red, 10);
+        color: darken($color-primary, 10);
         text-overflow: ellipsis;
         font-size: $area_line-height;
         white-space: nowrap;
@@ -134,7 +134,7 @@ $color-link-background: darken(#cce5c7, 13);
           position: absolute;
           top: 0;
           left: 0;
-          background: darken(red, 10);
+          background: darken($color-primary, 10);
           z-index: -1;
         }
       }
@@ -150,7 +150,7 @@ $color-link-background: darken(#cce5c7, 13);
       padding: 0 1rem;
       border-width: 0 1px 1px;
       border-style: solid;
-      border-color: darkred;
+      border-color: darken($color-primary, 20);
       text-decoration: none;
       text-align: center;
       transition: 0.4s;
@@ -167,7 +167,7 @@ $color-link-background: darken(#cce5c7, 13);
         height: 0;
         border-width: 6px 0 6px 10px;
         border-style: solid;
-        border-color: transparent #bf272d;
+        border-color: transparent $color-primary;
         display: inline-block;
         vertical-align: middle;
         margin: 0 0 0 8px;

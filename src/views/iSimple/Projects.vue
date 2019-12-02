@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { iModal } from '@/components/iSimple'
+import { iModal } from '@/components'
 export default {
   data() {
     return {
@@ -63,7 +63,7 @@ export default {
       },
       cover_image: '/cover/page/video.jpg',
       video_list: [
-        { vid: '3HETAzb_bwE', vtitle: '水林小陳', created: '2019-10-13' },
+        { vid: '1DXUWTUX4gU', vtitle: '水林小陳', created: '2019-10-13' },
         { vid: 'HoVayGW_Dtc', vtitle: '五木工坊', created: '2019-10-13' },
       ],
       current_video: '',

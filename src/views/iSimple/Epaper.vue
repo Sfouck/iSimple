@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import iCard from '@/components/iSimple/Card.vue'
+import { iCard } from '@/components'
 import details_data from '@/assets/js/details_data.js'
 export default {
   data() {

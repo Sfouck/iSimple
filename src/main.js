@@ -2,8 +2,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import { iCover } from './components/iSimple'
 
+import iCover from './components/Cover.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons'
 import {

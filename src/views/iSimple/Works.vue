@@ -133,6 +133,13 @@ export default {
       td:nth-child(3) {
         text-align: center;
       }
+      td:nth-child(3) > a {
+        text-decoration: none;
+        color: $color-primary;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 1rem;
+      }
     }
   }
 }

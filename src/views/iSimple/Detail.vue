@@ -44,7 +44,7 @@ export default {
     const target_component = `${this.post.post_name}.vue`
     this.post_component = () => ({
       // The component to load (should be a Promise)
-      component: import(`@/components/iSimple/Details/${target_component}`),
+      component: import(`@/components/Details/${target_component}`),
       delay: 200,
       timeout: 3000,
     })
