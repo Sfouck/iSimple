@@ -1,7 +1,12 @@
 <template>
-  <nav>
-    <ul class="nav-menu" ref="navMenu">
-      <li class="nav-menu__item" v-for="(item, index) in links" :key="index">
+  <nav class="nav-menu" ref="navMenu">
+    <ul class="nav-menu__list">
+      <li
+        class="nav-menu__item"
+        v-for="(item, index) in links"
+        :key="index"
+        @click="onLinkClicked"
+      >
         <router-link :to="item.route">
           {{ item.title }}
         </router-link>
@@ -16,29 +21,64 @@ export default {
   props: ['links', 'open'],
   watch: {
     open(isOpen) {
-      let menu = this.$refs.navMenu
+      // let menu = this.$refs.navMenu
       if (isOpen === true) {
-        menu.classList.add('nav-menu--opened')
+        this.openNavMenu()
       } else {
-        menu.classList.remove('nav-menu--opened')
+        this.closeNavMenu()
       }
+    },
+  },
+  methods: {
+    onLinkClicked() {
+      this.closeNavMenu()
+    },
+    closeNavMenu() {
+      // menu.classList.remove('nav--opened')
+      this.$refs.navMenu.classList.remove('nav-menu--opened')
+    },
+    openNavMenu() {
+      // menu.classList.add('nav--opened')
+      this.$refs.navMenu.classList.add('nav-menu--opened')
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-nav {
-  position: relative;
-}
-
 .nav-menu {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  > li {
+  transform: translateY(0%);
+
+  @include for-mobile {
+    transform: translateY(-150%);
+    transition: ease 5s;
+  }
+
+  &--opened {
+    transition: ease 0.01s;
+    transform: translateY(0%);
+
+    > ul {
+      transition: ease 0.3s;
+      transform: translateY(0%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    @include for-mobile {
+      flex-flow: column wrap;
+      background-color: lighten($color-light, 1);
+      transition: ease 0.3s;
+      transform: translateY(-100%);
+    }
+  }
+
+  &__item {
     list-style: none;
     > a {
       color: $color-dark;
@@ -50,15 +90,6 @@ nav {
         color: $color-light;
         background: $color-dark;
       }
-    }
-  }
-  @include for-mobile {
-    flex-flow: column wrap;
-    background-color: lighten($color-light, 1);
-    transition: all 0.3s;
-    transform: translateY(-100%);
-    &--opened {
-      transform: translateY(0%);
     }
   }
 }

@@ -157,13 +157,14 @@ section {
     top: 0;
 
     height: $header-height;
-    // min-height: $header-min-height;
+    min-height: $header-min-height;
 
     display: grid;
     grid-template-rows: minmax($header-min-height, $header-height) 1fr;
     grid-template-columns: repeat(5, 1fr);
 
     @include for-mobile {
+      min-height: 0px;
       grid-template-rows: minmax(auto, $header-height) 50vh;
     }
 
