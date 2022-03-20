@@ -2,7 +2,7 @@ let Fontmin = require('fontmin')
 
 const fontmin = new Fontmin().src('./setofont.ttf')
 
-fontmin.run(function(err, files) {
+fontmin.run(function (err, files) {
   if (err) {
     throw err
   }
