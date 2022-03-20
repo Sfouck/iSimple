@@ -53,7 +53,7 @@ export default {
   methods: {
     fetchPostData() {
       let params = this.$route.params
-      let target_post = posts.find(function(post) {
+      let target_post = posts.find(function (post) {
         return post.id == params.id
       })
       if (target_post) {

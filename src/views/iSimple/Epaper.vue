@@ -2,9 +2,7 @@
   <section class="page__epaper">
     <i-cover :background-url="cover_image">
       <template #title>
-        <h1>
-          電子報
-        </h1>
+        <h1>電子報</h1>
       </template>
     </i-cover>
     <article class="epaper">

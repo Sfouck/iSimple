@@ -59,7 +59,7 @@
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             width="640"
             height="360"
-            style="width:100%; height:100%; position: absolute;"
+            style="width: 100%; height: 100%; position: absolute"
           ></iframe>
         </div>
       </template>
@@ -104,14 +104,14 @@ export default {
     }
   },
   methods: {
-    openModalVideo: function(videoid) {
+    openModalVideo: function (videoid) {
       // console.log(videoid)
       this.current_video = videoid
       this.showModal = true
     },
   },
   computed: {
-    currentVideoURL: function() {
+    currentVideoURL: function () {
       return `//www.youtube.com/embed/${this.current_video}`
     },
   },

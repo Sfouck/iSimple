@@ -45,12 +45,12 @@ export default {
     }
   },
   methods: {
-    openVideo: function() {
+    openVideo: function () {
       this.$emit('open', this.videoid)
     },
   },
   computed: {
-    thumbnailURL: function() {
+    thumbnailURL: function () {
       return `//img.youtube.com/vi/${this.videoid}/0.jpg`
     },
   },

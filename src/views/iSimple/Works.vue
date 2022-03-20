@@ -2,9 +2,7 @@
   <section class="page__works">
     <i-cover :background-url="cover_image">
       <template #title>
-        <h1>
-          最新消息
-        </h1>
+        <h1>最新消息</h1>
       </template>
     </i-cover>
     <section class="works">
@@ -46,7 +44,7 @@ export default {
       { title: '標題', key: 'title' },
       { title: '日期', key: 'date' },
     ]
-    columns.forEach(function(key) {
+    columns.forEach(function (key) {
       sortOrders[key] = 1
     })
     return {
@@ -61,24 +59,20 @@ export default {
     }
   },
   computed: {
-    filteredNews: function() {
+    filteredNews: function () {
       var sortKey = this.sortKey
       var filterKey = this.filterKey && this.filterKey.toLowerCase()
       var order = this.sortOrders[sortKey] || 1
       var epapers = this.epaper_table.epapers
       if (filterKey) {
-        epapers = epapers.filter(function(row) {
-          return Object.keys(row).some(function(key) {
-            return (
-              String(row[key])
-                .toLowerCase()
-                .indexOf(filterKey) > -1
-            )
+        epapers = epapers.filter(function (row) {
+          return Object.keys(row).some(function (key) {
+            return String(row[key]).toLowerCase().indexOf(filterKey) > -1
           })
         })
       }
       if (sortKey) {
-        epapers = epapers.slice().sort(function(a, b) {
+        epapers = epapers.slice().sort(function (a, b) {
           a = a[sortKey]
           b = b[sortKey]
           return (a === b ? 0 : a > b ? 1 : -1) * order
@@ -88,12 +82,12 @@ export default {
     },
   },
   filters: {
-    capitalize: function(str) {
+    capitalize: function (str) {
       return str.charAt(0).toUpperCase() + str.slice(1)
     },
   },
   methods: {
-    sortBy: function(key) {
+    sortBy: function (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
     },

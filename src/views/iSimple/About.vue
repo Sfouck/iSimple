@@ -2,9 +2,7 @@
   <section class="page-about about">
     <i-cover class="about__cover" :background-url="cover_image">
       <template #title>
-        <h1>
-          聯絡資訊
-        </h1>
+        <h1>聯絡資訊</h1>
       </template>
     </i-cover>
     <section class="about__shop-list">

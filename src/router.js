@@ -19,7 +19,9 @@ export default new Router({
             scrollToTop: false,
           },
           component: () =>
-            import(/* webpackChunkName: "isimple-home" */ './views/iSimple/Home.vue'),
+            import(
+              /* webpackChunkName: "isimple-home" */ './views/iSimple/Home.vue'
+            ),
         },
         {
           path: 'epaper',
@@ -28,7 +30,9 @@ export default new Router({
             scrollToTop: false,
           },
           component: () =>
-            import(/* webpackChunkName: "isimple-home" */ './views/iSimple/Epaper.vue'),
+            import(
+              /* webpackChunkName: "isimple-home" */ './views/iSimple/Epaper.vue'
+            ),
         },
         {
           path: 'about',
@@ -37,7 +41,9 @@ export default new Router({
             scrollToTop: false,
           },
           component: () =>
-            import(/* webpackChunkName: "isimple-about" */ './views/iSimple/About.vue'),
+            import(
+              /* webpackChunkName: "isimple-about" */ './views/iSimple/About.vue'
+            ),
         },
         {
           path: 'works',
@@ -46,7 +52,9 @@ export default new Router({
             scrollToTop: false,
           },
           component: () =>
-            import(/* webpackChunkName: "isimple-works" */ './views/iSimple/Works.vue'),
+            import(
+              /* webpackChunkName: "isimple-works" */ './views/iSimple/Works.vue'
+            ),
         },
         {
           path: 'projects',
@@ -55,7 +63,9 @@ export default new Router({
             scrollToTop: false,
           },
           component: () =>
-            import(/* webpackChunkName: "isimple-projects" */ './views/iSimple/Projects.vue'),
+            import(
+              /* webpackChunkName: "isimple-projects" */ './views/iSimple/Projects.vue'
+            ),
         },
         {
           path: 'detail/:id',
@@ -64,7 +74,9 @@ export default new Router({
             scrollToTop: true,
           },
           component: () =>
-            import(/* webpackChunkName: "isimple-detail" */ './views/iSimple/Detail.vue'),
+            import(
+              /* webpackChunkName: "isimple-detail" */ './views/iSimple/Detail.vue'
+            ),
         },
       ],
     },
@@ -83,7 +95,7 @@ export default new Router({
     }
     // for page transition async scroll
     if (to.name !== from.name) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         this.app.$root.$once('scrollBeforeEnter', () => {
           this.app.$root.$nextTick(() => resolve(position))
         })

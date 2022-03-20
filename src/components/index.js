@@ -12,7 +12,7 @@ const VueISimple_ComponentList = [
   ICardComponent,
 ]
 
-const install = function(Vue, globalOptions) {
+const install = function (Vue, globalOptions) {
   if (globalOptions) {
     // SwiperComponent.props.globalOptions.default = () => globalOptions
   }

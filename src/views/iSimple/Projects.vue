@@ -2,9 +2,7 @@
   <article class="page__projects">
     <i-cover class="projects__cover" :background-url="cover_image">
       <template #title>
-        <h1>
-          過往水林
-        </h1>
+        <h1>過往水林</h1>
       </template>
     </i-cover>
 
@@ -39,7 +37,7 @@
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             width="640"
             height="360"
-            style="width:100%; height:100%; position: absolute;"
+            style="width: 100%; height: 100%; position: absolute"
           ></iframe>
         </div>
       </template>

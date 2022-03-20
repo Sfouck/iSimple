@@ -2,14 +2,12 @@ const news_data = [
   {
     title: '五木工坊 - 回鄉 (facebook)',
     date: ' 2019-10-27',
-    url:
-      'https://www.facebook.com/permalink.php?story_fbid=133530201385967&id=101228611282793',
+    url: 'https://www.facebook.com/permalink.php?story_fbid=133530201385967&id=101228611282793',
   },
   {
     title: '五木工坊 - 回鄉 (instagram)',
     date: ' 2019-10-26',
-    url:
-      'https://www.instagram.com/p/B4EsLD7lVB6/?utm_source=ig_web_button_share_sheet',
+    url: 'https://www.instagram.com/p/B4EsLD7lVB6/?utm_source=ig_web_button_share_sheet',
   },
   {
     title: '轉知雲林縣政府辦理「雲林縣國土計畫」（草案）案公聽會乙案',

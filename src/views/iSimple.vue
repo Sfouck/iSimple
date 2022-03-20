@@ -47,9 +47,7 @@
 
     <!-- 頁尾 -->
     <footer>
-      <p>
-        國立虎尾科技大學 地方創生計畫 wjc &copy; 2019
-      </p>
+      <p>國立虎尾科技大學 地方創生計畫 wjc &copy; 2019</p>
     </footer>
   </div>
 </template>
