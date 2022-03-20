@@ -1,4 +1,7 @@
-// import '@babel/polyfill'
+import { initializeMocking } from './mock'
+// add env condition
+initializeMocking()
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'

@@ -1,0 +1,64 @@
+{
+  "list": [
+    {
+      "shop_name": "五木工坊",
+      "shop_address": "雲林縣水林鄉頂尖山村 28 號",
+      "phone_number": "0921700895",
+      "contact_person": "楊詔期"
+    },
+    {
+      "shop_name": "風箏校長",
+      "shop_address": "雲林縣水林鄉水北村文化路 15 號",
+      "phone_number": "0937289099",
+      "contact_person": "侯順政"
+    },
+    {
+      "shop_name": "祥美餅舖",
+      "shop_address": "雲林縣水林鄉水林路 283 巷 3 號",
+      "phone_number": "0905389288",
+      "contact_person": "王雅玲"
+    },
+    {
+      "shop_name": "憨吉食堂",
+      "shop_address": "雲林縣水林鄉 26 之 1 號",
+      "phone_number": "0919804333",
+      "contact_person": "吳世明"
+    },
+    {
+      "shop_name": "松西陶影建形",
+      "shop_address": "雲林縣水林鄉松西村後厝路 21 號",
+      "phone_number": "0975196591",
+      "contact_person": "郭建佑"
+    },
+    {
+      "shop_name": "青草茶小舖",
+      "shop_address": "雲林縣水林鄉文化路",
+      "phone_number": "057852478",
+      "contact_person": "王健二"
+    },
+    {
+      "shop_name": "水賊林友善土地組合",
+      "shop_address": "雲林縣水林鄉埔尾路",
+      "phone_number": " 0933570937",
+      "contact_person": "蔡得黃"
+    },
+    {
+      "shop_name": "鮮禾屋",
+      "shop_address": "雲林縣水林鄉水林外環路148號",
+      "phone_number": "057856566",
+      "contact_person": "鄭清任"
+    },
+    {
+      "shop_name": "地瓜校長",
+      "shop_address": "雲林縣水林鄉大溝村",
+      "phone_number": "0919054026",
+      "contact_person": "李高章"
+    },
+    {
+      "shop_name": "黃金蝙蝠館",
+      "shop_address": "雲林縣水林鄉蘇秦路1號",
+      "phone_number": "057921097",
+      "contact_person": "張恒嘉"
+    }
+  ]
+}
