@@ -16,7 +16,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 window.history.scrollRestoration = 'manual'
-// Vue.use(iSimple)
 Vue.component('i-cover', iCover)
 
 library.add(farEnvelope)

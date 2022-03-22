@@ -8,77 +8,58 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '',
+      name: 'home',
+      meta: {
+        scrollToTop: false,
+      },
       component: () =>
-        import(/* webpackChunkName: "isimple" */ './views/iSimple.vue'),
-      children: [
-        {
-          path: '',
-          name: 'home',
-          meta: {
-            scrollToTop: false,
-          },
-          component: () =>
-            import(
-              /* webpackChunkName: "isimple-home" */ './views/iSimple/Home.vue'
-            ),
-        },
-        {
-          path: 'epaper',
-          name: 'e-paper',
-          meta: {
-            scrollToTop: false,
-          },
-          component: () =>
-            import(
-              /* webpackChunkName: "isimple-home" */ './views/iSimple/Epaper.vue'
-            ),
-        },
-        {
-          path: 'about',
-          name: 'about',
-          meta: {
-            scrollToTop: false,
-          },
-          component: () =>
-            import(
-              /* webpackChunkName: "isimple-about" */ './views/iSimple/About.vue'
-            ),
-        },
-        {
-          path: 'works',
-          name: 'works',
-          meta: {
-            scrollToTop: false,
-          },
-          component: () =>
-            import(
-              /* webpackChunkName: "isimple-works" */ './views/iSimple/Works.vue'
-            ),
-        },
-        {
-          path: 'projects',
-          name: 'projects',
-          meta: {
-            scrollToTop: false,
-          },
-          component: () =>
-            import(
-              /* webpackChunkName: "isimple-projects" */ './views/iSimple/Projects.vue'
-            ),
-        },
-        {
-          path: 'detail/:id',
-          name: 'detail',
-          meta: {
-            scrollToTop: true,
-          },
-          component: () =>
-            import(
-              /* webpackChunkName: "isimple-detail" */ './views/iSimple/Detail.vue'
-            ),
-        },
-      ],
+        import(/* webpackChunkName: "home" */ './views/Home.vue'),
+    },
+    {
+      path: 'epaper',
+      name: 'e-paper',
+      meta: {
+        scrollToTop: false,
+      },
+      component: () =>
+        import(/* webpackChunkName: "epaper" */ './views/Epaper.vue'),
+    },
+    {
+      path: 'about',
+      name: 'about',
+      meta: {
+        scrollToTop: false,
+      },
+      component: () =>
+        import(/* webpackChunkName: "about" */ './views/About.vue'),
+    },
+    {
+      path: 'works',
+      name: 'works',
+      meta: {
+        scrollToTop: false,
+      },
+      component: () =>
+        import(/* webpackChunkName: "works" */ './views/Works.vue'),
+    },
+    {
+      path: 'projects',
+      name: 'projects',
+      meta: {
+        scrollToTop: false,
+      },
+      component: () =>
+        import(/* webpackChunkName: "projects" */ './views/Projects.vue'),
+    },
+    {
+      path: 'detail/:id',
+      name: 'detail',
+      meta: {
+        scrollToTop: true,
+      },
+      component: () =>
+        import(/* webpackChunkName: "detail" */ './views/Detail.vue'),
     },
     {
       path: '*',
