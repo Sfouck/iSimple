@@ -5,7 +5,7 @@
 }
 
 @mixin for-pad() {
-  @media screen and (min-width: map-get($breakpoints, 'pad')) and (max-width: map-get($breakpoints, 'desktop') - 1) {
+  @media screen and (min-width: map-get($breakpoints, 'pad')) and (max-width: calc(map-get($breakpoints, 'desktop') - 1)) {
     @content;
   }
 }
@@ -16,9 +16,9 @@
   }
 }
 
-@mixin btn-hamburger($width, $height: $width, $color,$weight: 2px) {
+@mixin btn-hamburger($width, $height: $width, $color, $weight: 2px) {
   // $spacing: ($height - $weight * 3) / 2.75;
-  $spacing: $width / 3.3;
+  $spacing: calc($width / 3.3);
   width: $width;
   height: $weight;
   transition: all 0.4s ease;
