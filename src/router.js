@@ -8,7 +8,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '',
+      path: '/',
       name: 'home',
       meta: {
         scrollToTop: false,
@@ -17,7 +17,7 @@ export default new Router({
         import(/* webpackChunkName: "home" */ './views/Home.vue'),
     },
     {
-      path: 'epaper',
+      path: '/epaper',
       name: 'e-paper',
       meta: {
         scrollToTop: false,
@@ -26,7 +26,7 @@ export default new Router({
         import(/* webpackChunkName: "epaper" */ './views/Epaper.vue'),
     },
     {
-      path: 'about',
+      path: '/about',
       name: 'about',
       meta: {
         scrollToTop: false,
@@ -35,7 +35,7 @@ export default new Router({
         import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
-      path: 'works',
+      path: '/works',
       name: 'works',
       meta: {
         scrollToTop: false,
@@ -44,7 +44,7 @@ export default new Router({
         import(/* webpackChunkName: "works" */ './views/Works.vue'),
     },
     {
-      path: 'projects',
+      path: '/projects',
       name: 'projects',
       meta: {
         scrollToTop: false,
@@ -53,7 +53,7 @@ export default new Router({
         import(/* webpackChunkName: "projects" */ './views/Projects.vue'),
     },
     {
-      path: 'detail/:id',
+      path: '/detail/:id',
       name: 'detail',
       meta: {
         scrollToTop: true,
