@@ -198,7 +198,6 @@ section {
 }
 
 .logo-box {
-  z-index: inherit;
   height: 100%;
   grid-column: 3 / 4;
 
@@ -248,9 +247,10 @@ section {
   border-color: $color-sub_modal-dark;
   border-radius: 100%;
   > svg {
-    margin: 0 auto;
-    display: table;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 2.3rem;
     color: $color-sub_modal-dark;
   }

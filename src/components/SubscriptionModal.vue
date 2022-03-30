@@ -52,7 +52,6 @@
             </template>
           </div>
         </div>
-        <a class="modal-btn-close" @click="onButtonCloseClick"></a>
         <!-- <a class="modal-btn-close" @click="onButtonCloseClick"></a> -->
       </div>
     </div>
@@ -118,9 +117,9 @@ $modal-font-color: #6d6c6c;
 .modal-wrapper {
   position: relative;
   width: 70vh;
-  height: 70vh;
+  min-height: 70vh;
   border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 0px 8px 1px rgba(104, 104, 104, 0.6);
   display: flex;
   flex-flow: column wrap;

@@ -1,17 +1,15 @@
 <template>
-  <nav class="nav-menu" ref="navMenu">
-    <ul class="nav-menu__list">
-      <li
+  <nav class="nav-menu nav-menu__list" ref="navMenu">
+    <template v-for="(item, index) in links">
+      <router-link
         class="nav-menu__item"
-        v-for="(item, index) in links"
+        :to="item.route"
         :key="index"
         @click="onLinkClicked"
       >
-        <router-link :to="item.route">
-          {{ item.title }}
-        </router-link>
-      </li>
-    </ul>
+        {{ item.title }}
+      </router-link>
+    </template>
   </nav>
 </template>
 
@@ -47,48 +45,50 @@ export default {
 
 <style lang="scss" scoped>
 .nav-menu {
-  transform: translateY(0%);
+  transform: translateY(-150%);
+  transition: transform ease-in-out 0.5s;
 
-  @include for-mobile {
-    transform: translateY(-150%);
-    transition: ease 5s;
+  @include for-desktop {
+    transform: translateY(0%);
+    transition: none;
   }
 
   &--opened {
-    transition: ease 0.01s;
     transform: translateY(0%);
-
-    > ul {
-      transition: ease 0.3s;
-      transform: translateY(0%);
-    }
   }
 
   &__list {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    background-color: lighten($color-light, 1);
     align-items: center;
     height: 100%;
-    @include for-mobile {
-      flex-flow: column wrap;
-      background-color: lighten($color-light, 1);
-      transition: ease 0.3s;
-      transform: translateY(-100%);
+    justify-content: space-around;
+
+    flex-flow: column wrap;
+    @include for-desktop {
+      flex-flow: row wrap;
     }
   }
 
   &__item {
-    list-style: none;
-    > a {
-      color: $color-dark;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.5rem;
-      transition: 0.3s;
+    color: $color-dark;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color linear 0.3s;
+
+    @include for-desktop {
+      transition: transform ease-in-out 0.3s;
+      border-radius: 1rem;
+      border: 1px black solid;
+
+      padding: 0.25rem 1rem;
+
       &:hover {
         color: $color-light;
-        background: $color-dark;
+
+        background-color: $color-dark;
+        transform: translateY(-10%);
       }
     }
   }
