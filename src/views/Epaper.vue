@@ -23,13 +23,13 @@ import { iCard } from '@/components'
 import details_data from '@/assets/js/details_data.js'
 export default {
   data() {
-    for (let detail of details_data) {
-      detail.link = `/detail/${detail.id}`
-      detail.img = `/img/detail/${detail.img_folder}/cover.jpg`
-    }
     return {
       cover_image: 'cover/page/epaper.jpg',
-      epaper_list: details_data,
+      epaper_list: details_data.map((detail) => ({
+        ...detail,
+        link: `/detail/${detail.id}`,
+        img: `/img/detail/${detail.img_folder}/cover.jpg`,
+      })),
     }
   },
   computed: {},
