@@ -1,15 +1,13 @@
 <template>
-  <section class="cover">
-    <div class="cover__showcase" :style="cssVars">
-      <div class="cover__title">
-        <slot name="title"> </slot>
-      </div>
-      <div class="cover__body">
-        <slot> </slot>
-      </div>
-      <div class="cover__footer">
-        <slot name="button"> </slot>
-      </div>
+  <section class="cover cover__bg" :style="cssVars">
+    <div class="cover__title">
+      <slot name="title"> </slot>
+    </div>
+    <div class="cover__content">
+      <slot> </slot>
+    </div>
+    <div class="cover__footer">
+      <slot name="button"> </slot>
     </div>
   </section>
 </template>
@@ -77,11 +75,11 @@ export default {
     }
   }
 
-  &__body {
+  &__content {
     font-size: 1.3rem;
   }
 
-  &__showcase {
+  &__bg {
     min-height: 500px;
     line-height: 1.5;
     padding: 3rem;
