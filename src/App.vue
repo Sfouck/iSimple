@@ -171,7 +171,7 @@ section {
     grid-template-columns: repeat(5, 1fr);
 
     @include for-mobile {
-      min-height: 0px;
+      min-height: 4rem;
       grid-template-rows: minmax(auto, $header-height) 50vh;
     }
 
@@ -190,6 +190,7 @@ section {
   > main {
     display: grid;
     width: 100%;
+    min-height: 100vh;
     > section {
       width: inherit;
     }
@@ -198,7 +199,7 @@ section {
 
 .logo-box {
   z-index: inherit;
-  height: inherit;
+  height: 100%;
   grid-column: 3 / 4;
 
   img {
