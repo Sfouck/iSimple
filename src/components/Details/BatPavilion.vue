@@ -8,7 +8,7 @@
         </p>
         <img
           class="--center"
-          src="/img/detail/bat_pavilion/蝙蝠俠張恆嘉館長.jpg"
+          :src="`${publicPath}img/detail/bat_pavilion/蝙蝠俠張恆嘉館長.jpg`"
           alt="蝙蝠俠張恆嘉館長"
         />
         <p>
@@ -25,7 +25,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/bat_pavilion/館長照顧的蝙蝠.jpg"
+          :src="`${publicPath}img/detail/bat_pavilion/館長照顧的蝙蝠.jpg`"
           alt="館長照顧的蝙蝠"
         />
         <p>
@@ -42,7 +42,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/bat_pavilion/蝙蝠屋的成品.jpg"
+          :src="`${publicPath}img/detail/bat_pavilion/蝙蝠屋的成品.jpg`"
           alt="蝙蝠屋的成品"
         />
         <p>
@@ -59,7 +59,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/bat_pavilion/規模最大蝙蝠屋.jpg"
+          :src="`${publicPath}img/detail/bat_pavilion/規模最大蝙蝠屋.jpg`"
           alt="規模最大蝙蝠屋"
         />
         <p>
@@ -76,7 +76,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/bat_pavilion/與友善環境農民合作的幸蝠米.jpg"
+          :src="`${publicPath}img/detail/bat_pavilion/與友善環境農民合作的幸蝠米.jpg`"
           alt="與友善環境農民合作的幸蝠米"
         />
         <p>
@@ -96,7 +96,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/bat_pavilion/館長向民眾講解蝙蝠_黃金蝙蝠館提供.jpg"
+          :src="`${publicPath}img/detail/bat_pavilion/館長向民眾講解蝙蝠_黃金蝙蝠館提供.jpg`"
           alt="館長向民眾講解蝙蝠_黃金蝙蝠館提供"
         />
       </section>
@@ -105,9 +105,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailBatPavilion',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

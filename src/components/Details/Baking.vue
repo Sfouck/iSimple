@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-m --center"
-          src="/img/detail/baking/mold.jpg"
+          :src="`${publicPath}img/detail/baking/mold.jpg`"
           alt="mold"
         />
         <p>
@@ -25,7 +25,7 @@
         </p>
         <img
           class="--size-m --center"
-          src="/img/detail/baking/two_ricecake.jpg"
+          :src="`${publicPath}img/detail/baking/two_ricecake.jpg`"
           alt="two_ricecake"
         />
       </section>
@@ -45,7 +45,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/baking/making_ricecake.jpg"
+          :src="`${publicPath}img/detail/baking/making_ricecake.jpg`"
           alt="making_ricecake"
         />
       </section>
@@ -59,7 +59,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/baking/紅龜粿過程.jpg"
+          :src="`${publicPath}img/detail/baking/紅龜粿過程.jpg`"
           alt="紅龜粿過程"
         />
         <p>
@@ -79,7 +79,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/baking/炒花生2.jpg"
+          :src="`${publicPath}img/detail/baking/炒花生2.jpg`"
           alt="炒花生"
         />
       </section>
@@ -88,7 +88,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailBaking',
+  mixins: [publicPathMixin],
 }
 </script>

@@ -5,7 +5,7 @@
       <section class="pi-swpotato__ch-content">
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_sweetpotato/台農57號地瓜.jpg"
+          :src="`${publicPath}img/detail/principal_of_sweetpotato/台農57號地瓜.jpg`"
           alt="台農57號地瓜"
         />
         <p>
@@ -22,7 +22,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_sweetpotato/產銷履歷的證明.jpg"
+          :src="`${publicPath}img/detail/principal_of_sweetpotato/產銷履歷的證明.jpg`"
           alt="產銷履歷的證明"
         />
         <p>
@@ -40,7 +40,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_sweetpotato/地瓜幼苗.jpg"
+          :src="`${publicPath}img/detail/principal_of_sweetpotato/地瓜幼苗.jpg`"
           alt="地瓜幼苗"
         />
         <p>
@@ -66,7 +66,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_sweetpotato/採地瓜教學.jpg"
+          :src="`${publicPath}img/detail/principal_of_sweetpotato/採地瓜教學.jpg`"
           alt="採地瓜教學"
         />
         <p>
@@ -78,9 +78,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailPIofSwPotato',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

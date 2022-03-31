@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/herb_tea/青草茶.jpg"
+          :src="`${publicPath}img/detail/herb_tea/青草茶.jpg`"
           alt="青草茶"
         />
         <p>
@@ -25,7 +25,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/herb_tea/青草茶第二代老闆-王建二.jpg"
+          :src="`${publicPath}img/detail/herb_tea/青草茶第二代老闆-王建二.jpg`"
           alt="青草茶第二代老闆-王建二"
         />
         <p>
@@ -42,7 +42,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/herb_tea/曝曬中的青草.jpg"
+          :src="`${publicPath}img/detail/herb_tea/曝曬中的青草.jpg`"
           alt="曝曬中的青草"
         />
         <p>
@@ -59,7 +59,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/herb_tea/涼心青草茶三代同堂.jpg"
+          :src="`${publicPath}img/detail/herb_tea/涼心青草茶三代同堂.jpg`"
           alt="涼心青草茶三代同堂"
         />
         <p>
@@ -83,9 +83,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailHerbTea',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

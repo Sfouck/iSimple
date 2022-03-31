@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_kite/風箏校長侯順政.jpg"
+          :src="`${publicPath}img/detail/principal_of_kite/風箏校長侯順政.jpg`"
           alt="風箏校長侯順政"
         />
       </section>
@@ -31,7 +31,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_kite/仿米字型的風箏骨架.jpg"
+          :src="`${publicPath}img/detail/principal_of_kite/仿米字型的風箏骨架.jpg`"
           alt="仿米字型的風箏骨架"
         />
         <p>
@@ -51,7 +51,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_kite/連續長串風箏的放飛.jpg"
+          :src="`${publicPath}img/detail/principal_of_kite/連續長串風箏的放飛.jpg`"
           alt="連續長串風箏的放飛"
         />
         <p>
@@ -68,7 +68,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_kite/風箏教學現況.jpg"
+          :src="`${publicPath}img/detail/principal_of_kite/風箏教學現況.jpg`"
           alt="風箏教學現況"
         />
         <p>
@@ -76,7 +76,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/principal_of_kite/參與風箏DIY的大合照.jpg"
+          :src="`${publicPath}img/detail/principal_of_kite/參與風箏DIY的大合照.jpg`"
           alt="參與風箏DIY的大合照"
         />
         <p>
@@ -88,9 +88,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailPIofKite',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

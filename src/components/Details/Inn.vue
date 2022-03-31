@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/inn/mr_wu.jpg"
+          :src="`${publicPath}/img/detail/inn/mr_wu.jpg`"
           alt="mr_wu"
         />
       </section>
@@ -22,7 +22,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/inn/inn_portrait.jpg"
+          :src="`${publicPath}/img/detail/inn/inn_portrait.jpg`"
           alt="inn_portrait"
         />
       </section>
@@ -39,7 +39,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/inn/pavilion_night-view.jpg"
+          :src="`${publicPath}/img/detail/inn/pavilion_night-view.jpg`"
           alt="pavilion_night-view"
         />
       </section>
@@ -53,7 +53,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/inn/憨吉客棧內部.jpg"
+          :src="`${publicPath}/img/detail/inn/憨吉客棧內部.jpg`"
           alt="憨吉客棧內部"
         />
       </section>
@@ -67,7 +67,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/inn/憨吉客棧外部綠美化.jpg"
+          :src="`${publicPath}/img/detail/inn/憨吉客棧外部綠美化.jpg`"
           alt="憨吉客棧外部綠美化"
         />
       </section>
@@ -76,9 +76,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailInn',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

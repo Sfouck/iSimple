@@ -74,19 +74,22 @@ import details_data from '@/assets/js/details_data.js'
 export default {
   // name: 'isimple-home',
   data() {
-    for (let detail of details_data) {
-      detail.link = `/detail/${detail.id}`
-      detail.img = `/img/detail/${detail.img_folder}/cover.jpg`
-    }
+    const publicPath = process.env.BASE_URL
     return {
-      cover_background: '/cover/page/home.jpg',
+      cover_background: 'cover/page/home.jpg',
       showModal: false,
-      news_list: details_data.slice(0, 3),
+      news_list: details_data.slice(0, 3).map((detail) => {
+        return {
+          ...detail,
+          link: `/detail/${detail.id}`,
+          img: `${publicPath}img/detail/${detail.img_folder}/cover.jpg`,
+        }
+      }),
       current_video: 'hgVtUkRf_Cc',
       video_list: [
         {
           title: '水林小陳',
-          img: '/img/cover/video/tsai.jpg',
+          img: `${publicPath}img/cover/video/tsai.jpg`,
           description:
             '陳弘益畢業後即北上打拼，受到老闆賞識一路升至廠長。眼見務農雙親因年長行動不便，更驚覺兒時玩耍之小溪水溝中的青蛙、魚、蝦已不復見，遂於民國95年揮別廠長職務，舉家返鄉。',
           tags: ['水林小陳'],
@@ -94,7 +97,7 @@ export default {
         },
         {
           title: '五木工坊',
-          img: '/img/cover/video/woodwork.jpg',
+          img: `${publicPath}img/cover/video/woodwork.jpg`,
           description:
             '不惑之年的楊詔期先生,從事木工產業已逾 16 年。逐漸地體會到土木工程並非自己的志業,在 2008 年毅然決然地回到水林老家。',
           tags: ['五木工坊'],

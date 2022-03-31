@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/land_pottery/探索落水山莊的茶具.jpg"
+          :src="`${publicPath}img/detail/land_pottery/探索落水山莊的茶具.jpg`"
           alt="探索落水山莊的茶具"
         />
         <p>
@@ -22,7 +22,7 @@
       <section class="land-pottery__ch-content">
         <img
           class="--size-l --center"
-          src="/img/detail/land_pottery/豬舍改造成的工作室.jpg"
+          :src="`${publicPath}img/detail/land_pottery/豬舍改造成的工作室.jpg`"
           alt="豬舍改造成的工作室"
         />
         <p>
@@ -39,7 +39,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/land_pottery/檢測蔦松土硬度過程.jpg"
+          :src="`${publicPath}img/detail/land_pottery/檢測蔦松土硬度過程.jpg`"
           alt="檢測蔦松土硬度過程"
         />
         <p>
@@ -59,7 +59,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/land_pottery/手捏的神像.jpg"
+          :src="`${publicPath}img/detail/land_pottery/手捏的神像.jpg`"
           alt="手捏的神像"
         />
         <p>
@@ -79,7 +79,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/land_pottery/蔦松土的小茶碗.jpg"
+          :src="`${publicPath}img/detail/land_pottery/蔦松土的小茶碗.jpg`"
           alt="蔦松土的小茶碗"
         />
       </section>
@@ -88,9 +88,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailLandPottery',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

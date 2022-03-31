@@ -1,7 +1,10 @@
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 //   .BundleAnalyzerPlugin
 
+const baseUrl = process.env.NODE_ENV === 'production' ? '/iSimple/' : '/'
+
 module.exports = {
+  publicPath: baseUrl,
   css: {
     loaderOptions: {
       sass: {
@@ -9,6 +12,7 @@ module.exports = {
       },
     },
   },
+  productionSourceMap: false,
   // configureWebpack: {
   //   plugins: [new BundleAnalyzerPlugin()],
   // },

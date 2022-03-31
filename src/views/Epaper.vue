@@ -23,12 +23,13 @@ import { iCard } from '@/components'
 import details_data from '@/assets/js/details_data.js'
 export default {
   data() {
+    const publicPath = process.env.BASE_URL
     return {
       cover_image: 'cover/page/epaper.jpg',
       epaper_list: details_data.map((detail) => ({
         ...detail,
         link: `/detail/${detail.id}`,
-        img: `/img/detail/${detail.img_folder}/cover.jpg`,
+        img: `${publicPath}img/detail/${detail.img_folder}/cover.jpg`,
       })),
     }
   },

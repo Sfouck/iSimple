@@ -5,10 +5,10 @@
       <div class="logo-box">
         <router-link :to="{ name: 'home', path: '/' }">
           <img
-            src="/img/logo.png"
             alt="Logo"
             class="logo-box__img"
             id="header__logo"
+            :src="`${publicPath}img/logo.png`"
           />
         </router-link>
       </div>
@@ -72,6 +72,7 @@ export default {
       subscription_show: false,
       scrollPageNumber: 0,
       contentSectionHeight: 0,
+      publicPath: process.env.BASE_URL,
     }
   },
   methods: {

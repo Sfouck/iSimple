@@ -13,12 +13,14 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
+  mixins: [publicPathMixin],
   name: 'ICover',
   props: {
     'background-url': {
       type: String,
-      default: '/cover/page/home.jpg',
+      default: 'cover/page/home.jpg',
     },
     height: {
       type: String,
@@ -28,7 +30,7 @@ export default {
   computed: {
     cssVars() {
       return {
-        '--background-url': `url(/img/${this.backgroundUrl})`,
+        '--background-url': `url(${this.publicPath}img/${this.backgroundUrl})`,
         height: this.height,
       }
     },

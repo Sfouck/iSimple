@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/xianhe_house/鮮禾屋的老闆與老闆娘.jpg"
+          :src="`${publicPath}img/detail/xianhe_house/鮮禾屋的老闆與老闆娘.jpg`"
           alt="鮮禾屋的老闆與老闆娘"
         />
         <p>
@@ -28,7 +28,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/xianhe_house/醃製泡菜過程.jpg"
+          :src="`${publicPath}img/detail/xianhe_house/醃製泡菜過程.jpg`"
           alt="醃製泡菜過程"
         />
         <p>
@@ -45,7 +45,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/xianhe_house/店內販售的產品.jpg"
+          :src="`${publicPath}img/detail/xianhe_house/店內販售的產品.jpg`"
           alt="店內販售的產品"
         />
         <p>
@@ -65,7 +65,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/xianhe_house/鮮禾屋外部DIY庭院.jpg"
+          :src="`${publicPath}img/detail/xianhe_house/鮮禾屋外部DIY庭院.jpg`"
           alt="鮮禾屋外部DIY庭院"
         />
         <p>
@@ -85,7 +85,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/xianhe_house/鮮禾屋內部吧檯.jpg"
+          :src="`${publicPath}img/detail/xianhe_house/鮮禾屋內部吧檯.jpg`"
           alt="鮮禾屋內部吧檯"
         />
       </section>
@@ -94,9 +94,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailXianheHouse',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

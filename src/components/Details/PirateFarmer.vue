@@ -23,7 +23,7 @@
       <section class="pirate-farmer__ch-content">
         <img
           class="--size-l --center"
-          src="/img/detail/pirate_farmer/水賊林穀倉.jpg"
+          :src="`${publicPath}img/detail/pirate_farmer/水賊林穀倉.jpg`"
           alt="水賊林穀倉"
         />
         <p>
@@ -41,7 +41,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/pirate_farmer/水賊林工作夥伴.jpg"
+          :src="`${publicPath}img/detail/pirate_farmer/水賊林工作夥伴.jpg`"
           alt="水賊林工作夥伴"
         />
         <p>
@@ -58,7 +58,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/pirate_farmer/有機黑豆.jpg"
+          :src="`${publicPath}img/detail/pirate_farmer/有機黑豆.jpg`"
           alt="有機黑豆"
         />
         <p>
@@ -76,7 +76,7 @@
       <section class="pirate-farmer__ch-content">
         <img
           class="--size-l --center"
-          src="/img/detail/pirate_farmer/水賊林有機農產品.jpg"
+          :src="`${publicPath}img/detail/pirate_farmer/水賊林有機農產品.jpg`"
           alt="水賊林有機農產品"
         />
         <p>
@@ -88,9 +88,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailPirateFarmer',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>

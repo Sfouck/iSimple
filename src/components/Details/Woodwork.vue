@@ -8,7 +8,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/woodwork/tools.jpg"
+          :src="`${publicPath}img/detail/woodwork/tools.jpg`"
           alt="tools"
         />
         <p>
@@ -25,12 +25,12 @@
         </p>
         <img
           class="--size-m --inline-block"
-          src="/img/detail/woodwork/木椅.jpg"
+          :src="`${publicPath}img/detail/woodwork/木椅.jpg`"
           alt="木椅"
         />
         <img
           class="--size-m --inline-block"
-          src="/img/detail/woodwork/燈2.jpg"
+          :src="`${publicPath}img/detail/woodwork/燈2.jpg`"
           alt="燈"
         />
         <p>
@@ -44,7 +44,7 @@
       <section class="woodwork__ch-content">
         <img
           class="--size-l --center"
-          src="/img/detail/woodwork/wooden_dummny.jpg"
+          :src="`${publicPath}img/detail/woodwork/wooden_dummny.jpg`"
           alt="wooden_dummny"
         />
         <p>
@@ -67,7 +67,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/woodwork/window_wood-cut.jpg"
+          :src="`${publicPath}img/detail/woodwork/window_wood-cut.jpg`"
           alt="window_wood-cut"
         />
       </section>
@@ -81,7 +81,7 @@
         </p>
         <img
           class="--size-l --center"
-          src="/img/detail/woodwork/時光刻度.jpg"
+          :src="`${publicPath}img/detail/woodwork/時光刻度.jpg`"
           alt="時光刻度"
         />
       </section>
@@ -90,9 +90,8 @@
 </template>
 
 <script>
+import publicPathMixin from '@/mixins/publicPath'
 export default {
-  name: 'IDetailWoodwork',
+  mixins: [publicPathMixin],
 }
 </script>
-
-<style lang="scss"></style>
