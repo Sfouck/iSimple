@@ -25,9 +25,6 @@
     </div>
 
     <div class="card__link-box" v-if="link">
-      <!-- <a :href="link">
-        <p>深入瞭解</p>
-      </a> -->
       <router-link :to="link">
         <p>深入瞭解</p>
       </router-link>
@@ -51,8 +48,8 @@ $area_line-height: 1.2rem;
   &__thumb {
     position: relative;
     width: 100%;
-    min-height: 200px;
-    height: 30vh;
+    height: 300px;
+    // height: 30vh;
     overflow: hidden;
     > img {
       position: absolute;

@@ -1,6 +1,6 @@
-import { initializeMocking } from './mock'
+// import { initializeMocking } from './mock'
 // add env condition
-initializeMocking()
+// initializeMocking()
 
 import Vue from 'vue'
 import App from './App.vue'

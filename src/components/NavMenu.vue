@@ -79,7 +79,7 @@ export default {
 
     @include for-desktop {
       transition: transform ease-in-out 0.3s;
-      border-radius: 1rem;
+      border-radius: 0.25rem;
       border: 1px black solid;
 
       padding: 0.25rem 1rem;
